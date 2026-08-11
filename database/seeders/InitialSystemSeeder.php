@@ -95,6 +95,7 @@ class InitialSystemSeeder extends Seeder
             ['code' => 'LIUVA-TEST001'],
             [
                 'status' => 'disponible',
+                'estado' => License::STATUS_AVAILABLE,
             ]
         );
     }

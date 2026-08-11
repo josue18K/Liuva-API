@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\AccountController;
 use App\Http\Controllers\Api\Admin\ActivityLogController;
 use App\Http\Controllers\Api\Admin\CategoryController;
 use App\Http\Controllers\Api\Admin\InventoryAdjustmentController;
@@ -16,10 +17,12 @@ use App\Http\Controllers\Api\SaleReceiptController;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/login', [AuthController::class, 'login'])->middleware('throttle:5,1');
+Route::post('/register', [AccountController::class, 'register'])->middleware('throttle:3,1');
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
     Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/account/activate', [AccountController::class, 'activate']);
 
     Route::middleware('account.active')->group(function () {
         Route::middleware('role:admin')->prefix('admin')->group(function () {
@@ -31,6 +34,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
             Route::get('/licenses', [LicenseController::class, 'index']);
             Route::post('/licenses', [LicenseController::class, 'store']);
+            Route::put('/licenses/{license}/status', [LicenseController::class, 'updateStatus']);
 
             Route::get('/sellers', [SellerController::class, 'index']);
             Route::post('/sellers', [SellerController::class, 'store']);

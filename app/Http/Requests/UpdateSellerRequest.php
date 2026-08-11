@@ -26,6 +26,7 @@ class UpdateSellerRequest extends FormRequest
             ],
             'password' => ['nullable', 'string', 'min:8', 'max:50'],
             'active' => ['required', 'boolean'],
+            'sede_id' => ['nullable', 'integer', 'exists:sedes,id'],
         ];
     }
 
