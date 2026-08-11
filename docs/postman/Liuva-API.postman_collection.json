@@ -1,0 +1,46 @@
+{
+  "info": {
+    "name": "Liuva API",
+    "description": "Flujos principales de la API. La lista completa de rutas está en docs/API.md.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": { "type": "bearer", "bearer": [{ "key": "token", "value": "{{token}}", "type": "string" }] },
+  "item": [
+    {
+      "name": "Autenticación",
+      "item": [
+        {
+          "name": "Login",
+          "event": [{ "listen": "test", "script": { "exec": ["if (pm.response.code === 200) pm.environment.set('token', pm.response.json().token);"] } }],
+          "request": { "auth": { "type": "noauth" }, "method": "POST", "header": [{ "key": "Accept", "value": "application/json" }, { "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\n  \"email\": \"{{email}}\",\n  \"password\": \"{{password}}\"\n}" }, "url": "{{base_url}}/login" }
+        },
+        { "name": "Perfil", "request": { "method": "GET", "url": "{{base_url}}/me" } },
+        { "name": "Activar cuenta", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"license_code\":\"{{license_code}}\"}" }, "url": "{{base_url}}/account/activate" } },
+        { "name": "Logout", "request": { "method": "POST", "url": "{{base_url}}/logout" } }
+      ]
+    },
+    {
+      "name": "Operación vendedor",
+      "item": [
+        { "name": "Abrir caja", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"sede_id\":{{sede_id}},\"denominations\":[{\"denominacion\":\"100\",\"cantidad\":1}]}" }, "url": "{{base_url}}/cash-registers/open" } },
+        { "name": "Buscar producto", "request": { "method": "GET", "url": "{{base_url}}/sales/search-products?sede_id={{sede_id}}&q=LIU" } },
+        { "name": "Registrar venta", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"sede_id\":{{sede_id}},\"forma_pago\":\"efectivo\",\"items\":[{\"product_id\":{{product_id}},\"cantidad\":1,\"precio_vendido\":\"10.00\"}]}" }, "url": "{{base_url}}/sales" } },
+        { "name": "Historial ventas", "request": { "method": "GET", "url": "{{base_url}}/sales" } },
+        { "name": "Generar comprobante", "request": { "method": "POST", "url": "{{base_url}}/sales/{{sale_id}}/generate-receipt" } },
+        { "name": "Cerrar caja", "request": { "method": "POST", "header": [{ "key": "Content-Type", "value": "application/json" }], "body": { "mode": "raw", "raw": "{\"cash_register_id\":{{cash_register_id}},\"denominations\":[{\"denominacion\":\"100\",\"cantidad\":1}]}" }, "url": "{{base_url}}/cash-registers/close" } }
+      ]
+    },
+    {
+      "name": "Administración",
+      "item": [
+        { "name": "Productos", "request": { "method": "GET", "url": "{{base_url}}/admin/products?per_page=20" } },
+        { "name": "Categorías", "request": { "method": "GET", "url": "{{base_url}}/admin/categories?per_page=20" } },
+        { "name": "Vendedores", "request": { "method": "GET", "url": "{{base_url}}/admin/sellers" } },
+        { "name": "Licencias", "request": { "method": "GET", "url": "{{base_url}}/admin/licenses" } },
+        { "name": "Movimientos", "request": { "method": "GET", "url": "{{base_url}}/admin/inventory-movements?per_page=25" } },
+        { "name": "Reporte inventario", "request": { "method": "GET", "url": "{{base_url}}/admin/inventory-reports/sede/{{sede_id}}" } },
+        { "name": "Bitácora", "request": { "method": "GET", "url": "{{base_url}}/admin/activity-logs?per_page=20" } }
+      ]
+    }
+  ]
+}
