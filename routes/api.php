@@ -3,7 +3,6 @@
 use App\Http\Controllers\Api\AccountController;
 use App\Http\Controllers\Api\Admin\ActivityLogController;
 use App\Http\Controllers\Api\Admin\CategoryController;
-use App\Http\Controllers\Api\Admin\InventoryAdjustmentController;
 use App\Http\Controllers\Api\Admin\InventoryMovementController;
 use App\Http\Controllers\Api\Admin\InventoryReportController;
 use App\Http\Controllers\Api\Admin\LicenseController;
@@ -56,12 +55,6 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::post('/products', [ProductController::class, 'store']);
             Route::get('/products/{product}', [ProductController::class, 'show']);
             Route::put('/products/{product}', [ProductController::class, 'update']);
-
-            Route::get('/inventory-adjustments', [InventoryAdjustmentController::class, 'index']);
-            Route::post('/inventory-adjustments', [InventoryAdjustmentController::class, 'store']);
-            Route::get('/inventory-adjustments/{inventoryAdjustment}', [InventoryAdjustmentController::class, 'show']);
-            Route::put('/inventory-adjustments/{inventoryAdjustment}', [InventoryAdjustmentController::class, 'update']);
-            Route::delete('/inventory-adjustments/{inventoryAdjustment}', [InventoryAdjustmentController::class, 'destroy']);
 
             Route::get('/inventory-movements', [InventoryMovementController::class, 'index']);
             Route::post('/inventory-movements', [InventoryMovementController::class, 'store']);

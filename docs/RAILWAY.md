@@ -61,6 +61,17 @@ GET https://dominio/up
 Debe responder `200`. Después importar la colección Postman de `docs/postman`,
 cambiar `base_url` a `https://dominio/api` y ejecutar el flujo completo.
 
+## Primer administrador
+
+Abrir una shell del servicio API y ejecutar:
+
+```text
+php artisan liuva:create-admin
+```
+
+El comando solicita correo y contraseña de forma interactiva. No existe ninguna
+contraseña administrativa predeterminada en el código.
+
 ## Migraciones
 
 Railway ejecuta `php artisan migrate --force` como comando previo al despliegue.

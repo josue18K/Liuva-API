@@ -51,10 +51,6 @@ Todas las rutas siguientes requieren cuenta activa y rol `admin`.
 | GET, POST | `/admin/settings` | Consultar o guardar configuraciones |
 | GET | `/admin/settings/{key}` | Consultar una configuración |
 
-Las rutas `/admin/inventory-adjustments` se conservan temporalmente para
-compatibilidad con la primera versión. Las aplicaciones nuevas deben usar
-`/admin/inventory-movements`.
-
 ## Ventas, caja y comprobantes
 
 Requieren cuenta activa. Los vendedores solo ven sus propios datos y operan en

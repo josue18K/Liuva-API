@@ -7,7 +7,6 @@ use App\Http\Requests\UpdateSettingRequest;
 use App\Models\ActivityLog;
 use App\Models\Setting;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\Request;
 
 class SettingController extends Controller
 {

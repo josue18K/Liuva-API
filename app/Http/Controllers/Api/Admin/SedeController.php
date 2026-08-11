@@ -33,7 +33,7 @@ class SedeController extends Controller
             'accion' => 'Registro de sede',
             'modelo' => Sede::class,
             'modelo_id' => $sede->id,
-            'detalle' => 'Se registró la sede ' . $sede->nombre,
+            'detalle' => 'Se registró la sede '.$sede->nombre,
         ]);
 
         return response()->json([
@@ -62,7 +62,7 @@ class SedeController extends Controller
             'accion' => 'Actualización de sede',
             'modelo' => Sede::class,
             'modelo_id' => $sede->id,
-            'detalle' => 'Se actualizó la sede ' . $sede->nombre,
+            'detalle' => 'Se actualizó la sede '.$sede->nombre,
         ]);
 
         return response()->json([

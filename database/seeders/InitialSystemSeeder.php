@@ -7,24 +7,12 @@ use App\Models\License;
 use App\Models\Product;
 use App\Models\ProductStock;
 use App\Models\Sede;
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class InitialSystemSeeder extends Seeder
 {
     public function run(): void
     {
-        $admin = User::query()->firstOrCreate(
-            ['email' => 'admin@liuva.com'],
-            [
-                'name' => 'Administrador Liuva',
-                'password' => 'Admin12345',
-                'role' => User::ROLE_ADMIN,
-                'active' => true,
-                'estado' => User::STATUS_ACTIVE,
-            ]
-        );
-
         $sede = Sede::query()->firstOrCreate(
             ['nombre' => 'Sede Principal'],
             [
