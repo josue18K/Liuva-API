@@ -17,6 +17,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+        // Railway termina TLS en su proxy. Confiar en él conserva correctamente
+        // el esquema HTTPS al generar URLs y evita redirecciones hacia HTTP.
+        $middleware->trustProxies(at: '*');
+
         $middleware->alias([
             'account.active' => EnsureUserIsActive::class,
             'role' => EnsureUserHasRole::class,
