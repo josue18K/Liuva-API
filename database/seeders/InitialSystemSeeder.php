@@ -19,8 +19,9 @@ class InitialSystemSeeder extends Seeder
             [
                 'name' => 'Administrador Liuva',
                 'password' => 'Admin12345',
-                'role' => 'admin',
+                'role' => User::ROLE_ADMIN,
                 'active' => true,
+                'estado' => User::STATUS_ACTIVE,
             ]
         );
 

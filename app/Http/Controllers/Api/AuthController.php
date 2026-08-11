@@ -29,10 +29,13 @@ class AuthController extends Controller
             ]);
         }
 
-        if (! $user->active) {
-            throw ValidationException::withMessages([
-                'email' => ['Tu cuenta está desactivada. Contacta al administrador.'],
-            ]);
+        if ($user->isDisabled()) {
+            $user->tokens()->delete();
+
+            return response()->json([
+                'message' => 'Tu cuenta está deshabilitada. Contacta al administrador.',
+                'code' => 'ACCOUNT_DISABLED',
+            ], 403);
         }
 
         $user->tokens()->delete();
@@ -57,6 +60,8 @@ class AuthController extends Controller
                 'email' => $user->email,
                 'role' => $user->role,
                 'active' => $user->active,
+                'estado' => $user->estado,
+                'sede_id' => $user->sede_id,
             ],
         ]);
     }
@@ -72,6 +77,8 @@ class AuthController extends Controller
                 'email' => $user->email,
                 'role' => $user->role,
                 'active' => $user->active,
+                'estado' => $user->estado,
+                'sede_id' => $user->sede_id,
             ],
         ]);
     }
@@ -88,7 +95,7 @@ class AuthController extends Controller
             'detalle' => 'El usuario cerró sesión en el sistema.',
         ]);
 
-        $request->user()->currentAccessToken()->delete();
+        $user->currentAccessToken()?->delete();
 
         return response()->json([
             'message' => 'Sesión cerrada correctamente.',

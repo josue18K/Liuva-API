@@ -22,6 +22,7 @@ class EnsureUserHasRole
         if (! in_array($user->role, $roles, true)) {
             return response()->json([
                 'message' => 'No tienes permisos para realizar esta acción.',
+                'code' => 'INSUFFICIENT_ROLE',
             ], 403);
         }
 

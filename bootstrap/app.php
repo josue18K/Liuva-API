@@ -15,7 +15,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
-            'active' => EnsureUserIsActive::class,
+            'account.active' => EnsureUserIsActive::class,
             'role' => EnsureUserHasRole::class,
         ]);
     })

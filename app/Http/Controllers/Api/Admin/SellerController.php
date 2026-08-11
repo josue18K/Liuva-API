@@ -51,7 +51,7 @@ class SellerController extends Controller
             'accion' => 'Registro de vendedor',
             'modelo' => User::class,
             'modelo_id' => $seller->id,
-            'detalle' => 'Se registró al vendedor ' . $seller->email,
+            'detalle' => 'Se registró al vendedor '.$seller->email,
         ]);
 
         return response()->json([
@@ -94,6 +94,9 @@ class SellerController extends Controller
         $seller->name = $request->string('name');
         $seller->email = $request->string('email');
         $seller->active = $request->boolean('active');
+        $seller->estado = $request->boolean('active')
+            ? User::STATUS_ACTIVE
+            : User::STATUS_DISABLED;
 
         if ($request->filled('password')) {
             $seller->password = $request->string('password');
@@ -106,7 +109,7 @@ class SellerController extends Controller
             'accion' => 'Actualización de vendedor',
             'modelo' => User::class,
             'modelo_id' => $seller->id,
-            'detalle' => 'Se actualizó al vendedor ' . $seller->email,
+            'detalle' => 'Se actualizó al vendedor '.$seller->email,
         ]);
 
         return response()->json([
@@ -117,6 +120,7 @@ class SellerController extends Controller
                 'email' => $seller->email,
                 'role' => $seller->role,
                 'active' => $seller->active,
+                'estado' => $seller->estado,
             ],
         ]);
     }
