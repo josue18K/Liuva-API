@@ -8,12 +8,27 @@ use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\ActivityLog;
 use App\Models\Category;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function index(): JsonResponse
+    public function index(Request $request): JsonResponse
     {
-        $categories = Category::query()->latest()->get();
+        $validated = $request->validate([
+            'q' => ['nullable', 'string', 'max:100'],
+            'active' => ['nullable', 'boolean'],
+            'per_page' => ['nullable', 'integer', 'min:1', 'max:50'],
+        ]);
+
+        $search = trim((string) ($validated['q'] ?? ''));
+
+        $categories = Category::query()
+            ->withCount('products')
+            ->when($search !== '', fn ($query) => $query->where('nombre', 'like', '%'.$search.'%'))
+            ->when(array_key_exists('active', $validated), fn ($query) => $query->where('active', $validated['active']))
+            ->latest()
+            ->paginate($validated['per_page'] ?? 20)
+            ->withQueryString();
 
         return response()->json([
             'categories' => $categories,
@@ -32,7 +47,7 @@ class CategoryController extends Controller
             'accion' => 'Registro de categoría',
             'modelo' => Category::class,
             'modelo_id' => $category->id,
-            'detalle' => 'Se registró la categoría ' . $category->nombre,
+            'detalle' => 'Se registró la categoría '.$category->nombre,
         ]);
 
         return response()->json([
@@ -60,7 +75,7 @@ class CategoryController extends Controller
             'accion' => 'Actualización de categoría',
             'modelo' => Category::class,
             'modelo_id' => $category->id,
-            'detalle' => 'Se actualizó la categoría ' . $category->nombre,
+            'detalle' => 'Se actualizó la categoría '.$category->nombre,
         ]);
 
         return response()->json([

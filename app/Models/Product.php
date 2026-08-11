@@ -10,9 +10,12 @@ class Product extends Model
 {
     protected $fillable = [
         'nombre',
+        'descripcion',
         'codigo_interno',
         'codigo_barras',
         'precio_oficial',
+        'unidad',
+        'stock_minimo',
         'category_id',
         'active',
     ];
@@ -21,6 +24,7 @@ class Product extends Model
     {
         return [
             'precio_oficial' => 'decimal:2',
+            'stock_minimo' => 'integer',
             'active' => 'boolean',
         ];
     }
