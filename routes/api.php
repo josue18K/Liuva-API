@@ -4,6 +4,7 @@ use App\Http\Controllers\Api\AccountController;
 use App\Http\Controllers\Api\Admin\ActivityLogController;
 use App\Http\Controllers\Api\Admin\CategoryController;
 use App\Http\Controllers\Api\Admin\InventoryAdjustmentController;
+use App\Http\Controllers\Api\Admin\InventoryMovementController;
 use App\Http\Controllers\Api\Admin\InventoryReportController;
 use App\Http\Controllers\Api\Admin\LicenseController;
 use App\Http\Controllers\Api\Admin\ProductController;
@@ -61,6 +62,9 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::get('/inventory-adjustments/{inventoryAdjustment}', [InventoryAdjustmentController::class, 'show']);
             Route::put('/inventory-adjustments/{inventoryAdjustment}', [InventoryAdjustmentController::class, 'update']);
             Route::delete('/inventory-adjustments/{inventoryAdjustment}', [InventoryAdjustmentController::class, 'destroy']);
+
+            Route::get('/inventory-movements', [InventoryMovementController::class, 'index']);
+            Route::post('/inventory-movements', [InventoryMovementController::class, 'store']);
 
             Route::get('/inventory-reports/sede/{sede}', [InventoryReportController::class, 'bySede']);
 

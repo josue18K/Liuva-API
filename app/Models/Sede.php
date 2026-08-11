@@ -36,4 +36,9 @@ class Sede extends Model
     {
         return $this->hasMany(CashRegister::class);
     }
+
+    public function inventoryMovements(): HasMany
+    {
+        return $this->hasMany(InventoryMovement::class);
+    }
 }
