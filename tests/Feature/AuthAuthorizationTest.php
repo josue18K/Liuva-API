@@ -103,6 +103,6 @@ class AuthAuthorizationTest extends TestCase
     {
         $this->getJson('/api/me')
             ->assertUnauthorized()
-            ->assertJsonPath('message', 'Unauthenticated.');
+            ->assertJsonPath('code', 'UNAUTHENTICATED');
     }
 }

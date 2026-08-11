@@ -13,13 +13,27 @@ class ActivityLog extends Model
         'modelo',
         'modelo_id',
         'detalle',
+        'ip_address',
+        'user_agent',
+        'metadata',
     ];
 
     protected function casts(): array
     {
         return [
             'modelo_id' => 'integer',
+            'metadata' => 'array',
         ];
+    }
+
+    protected static function booted(): void
+    {
+        static::creating(function (ActivityLog $log): void {
+            if (app()->bound('request')) {
+                $log->ip_address ??= request()->ip();
+                $log->user_agent ??= request()->userAgent();
+            }
+        });
     }
 
     public function user(): BelongsTo

@@ -11,9 +11,12 @@ class ActivityLogController extends Controller
 {
     public function index(Request $request): JsonResponse
     {
-        $request->validate([
+        $validated = $request->validate([
             'user_id' => ['nullable', 'integer', 'exists:users,id'],
             'accion' => ['nullable', 'string', 'max:255'],
+            'modelo' => ['nullable', 'string', 'max:255'],
+            'desde' => ['nullable', 'date_format:Y-m-d'],
+            'hasta' => ['nullable', 'date_format:Y-m-d', 'after_or_equal:desde'],
             'per_page' => ['nullable', 'integer', 'min:5', 'max:100'],
         ]);
 
@@ -21,17 +24,16 @@ class ActivityLogController extends Controller
             ->with('user:id,name,email,role')
             ->latest();
 
-        if ($request->filled('user_id')) {
-            $query->where('user_id', $request->integer('user_id'));
-        }
+        $query
+            ->when(isset($validated['user_id']), fn ($query) => $query->where('user_id', $validated['user_id']))
+            ->when(isset($validated['accion']), fn ($query) => $query->where('accion', 'like', '%'.$validated['accion'].'%'))
+            ->when(isset($validated['modelo']), fn ($query) => $query->where('modelo', $validated['modelo']))
+            ->when(isset($validated['desde']), fn ($query) => $query->whereDate('created_at', '>=', $validated['desde']))
+            ->when(isset($validated['hasta']), fn ($query) => $query->whereDate('created_at', '<=', $validated['hasta']));
 
-        if ($request->filled('accion')) {
-            $query->where('accion', 'like', '%' . $request->query('accion') . '%');
-        }
+        $logs = $query->paginate($validated['per_page'] ?? 20)->withQueryString();
 
-        $logs = $query->paginate($request->integer('per_page', 20));
-
-        return response()->json($logs);
+        return response()->json(['activity_logs' => $logs]);
     }
 
     public function show(ActivityLog $activityLog): JsonResponse
