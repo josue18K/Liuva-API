@@ -99,4 +99,6 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 });
 
-Route::get('/public/receipts/{sale}', [SaleReceiptController::class, 'show']);
+Route::get('/public/receipts/{token}', [SaleReceiptController::class, 'show'])
+    ->whereUuid('token')
+    ->name('public.receipts.show');
