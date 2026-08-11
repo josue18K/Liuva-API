@@ -11,7 +11,11 @@ class Sale extends Model
     protected $fillable = [
         'user_id',
         'sede_id',
+        'cash_register_id',
+        'forma_pago',
         'total',
+        'comprobante_numero',
+        'comprobante_token',
         'comprobante_path',
     ];
 
@@ -30,6 +34,11 @@ class Sale extends Model
     public function sede(): BelongsTo
     {
         return $this->belongsTo(Sede::class);
+    }
+
+    public function cashRegister(): BelongsTo
+    {
+        return $this->belongsTo(CashRegister::class);
     }
 
     public function items(): HasMany

@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreSaleRequest extends FormRequest
 {
@@ -15,10 +16,11 @@ class StoreSaleRequest extends FormRequest
     {
         return [
             'sede_id' => ['required', 'integer', 'exists:sedes,id'],
+            'forma_pago' => ['required', Rule::in(['efectivo', 'yape', 'plin', 'transferencia'])],
             'items' => ['required', 'array', 'min:1'],
-            'items.*.product_id' => ['required', 'integer', 'exists:products,id'],
+            'items.*.product_id' => ['required', 'integer', 'distinct', 'exists:products,id'],
             'items.*.cantidad' => ['required', 'integer', 'min:1'],
-            'items.*.precio_vendido' => ['required', 'numeric', 'min:0'],
+            'items.*.precio_vendido' => ['required', 'decimal:0,2', 'min:0'],
         ];
     }
 
