@@ -22,6 +22,11 @@ RUN apt-get update \
         unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j"$(nproc)" gd pdo_mysql zip \
+    && rm -f /etc/apache2/mods-enabled/mpm_event.load \
+        /etc/apache2/mods-enabled/mpm_event.conf \
+        /etc/apache2/mods-enabled/mpm_worker.load \
+        /etc/apache2/mods-enabled/mpm_worker.conf \
+    && a2enmod mpm_prefork \
     && a2enmod rewrite headers \
     && rm -rf /var/lib/apt/lists/*
 
