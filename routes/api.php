@@ -40,6 +40,7 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::post('/sellers', [SellerController::class, 'store']);
             Route::get('/sellers/{seller}', [SellerController::class, 'show']);
             Route::put('/sellers/{seller}', [SellerController::class, 'update']);
+            Route::delete('/sellers/{seller}', [SellerController::class, 'destroy']);
 
             Route::get('/sedes', [SedeController::class, 'index']);
             Route::post('/sedes', [SedeController::class, 'store']);

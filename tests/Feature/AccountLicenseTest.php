@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Models\CashRegister;
 use App\Models\License;
 use App\Models\Sede;
 use App\Models\User;
@@ -158,6 +159,49 @@ class AccountLicenseTest extends TestCase
             ->assertCreated()
             ->assertJsonPath('seller.estado', User::STATUS_PENDING)
             ->assertJsonPath('seller.sede_id', $sede->id);
+    }
+
+    public function test_admin_can_delete_a_seller_without_operational_history(): void
+    {
+        $admin = User::factory()->admin()->create();
+        $seller = User::factory()->create();
+
+        $this->withToken($admin->createToken('admin')->plainTextToken)
+            ->deleteJson("/api/admin/sellers/{$seller->id}")
+            ->assertOk()
+            ->assertJsonPath('message', 'Vendedor eliminado correctamente.');
+
+        $this->assertDatabaseMissing('users', ['id' => $seller->id]);
+        $this->assertDatabaseHas('activity_logs', [
+            'user_id' => $admin->id,
+            'accion' => 'Eliminación de vendedor',
+            'modelo_id' => $seller->id,
+        ]);
+    }
+
+    public function test_admin_cannot_delete_a_seller_with_operational_history(): void
+    {
+        $admin = User::factory()->admin()->create();
+        $sede = Sede::query()->create(['nombre' => 'Sede Centro', 'active' => true]);
+        $seller = User::factory()->active()->create(['sede_id' => $sede->id]);
+
+        CashRegister::query()->create([
+            'user_id' => $seller->id,
+            'sede_id' => $sede->id,
+            'tipo' => 'apertura',
+            'monto_contado' => 100,
+            'fecha_hora' => now(),
+        ]);
+
+        $this->withToken($admin->createToken('admin')->plainTextToken)
+            ->deleteJson("/api/admin/sellers/{$seller->id}")
+            ->assertStatus(409)
+            ->assertJsonPath(
+                'message',
+                'Este vendedor tiene ventas, movimientos de caja o ajustes registrados. Para conservar el historial, deshabilita su cuenta en lugar de eliminarla.',
+            );
+
+        $this->assertDatabaseHas('users', ['id' => $seller->id]);
     }
 
     private function createLicense(string $code, string $estado = License::STATUS_AVAILABLE): License

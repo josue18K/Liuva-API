@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSellerRequest;
 use App\Http\Requests\UpdateSellerRequest;
 use App\Models\ActivityLog;
+use App\Models\InventoryAdjustment;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -114,6 +115,40 @@ class SellerController extends Controller
                 'estado' => $seller->estado,
                 'sede_id' => $seller->sede_id,
             ],
+        ]);
+    }
+
+    public function destroy(Request $request, User $seller): JsonResponse
+    {
+        abort_if($seller->role !== User::ROLE_SELLER, 404);
+
+        $hasOperationalHistory = $seller->sales()->exists()
+            || $seller->cashRegisters()->exists()
+            || InventoryAdjustment::query()->where('user_id', $seller->id)->exists();
+
+        if ($hasOperationalHistory) {
+            return response()->json([
+                'message' => 'Este vendedor tiene ventas, movimientos de caja o ajustes registrados. Para conservar el historial, deshabilita su cuenta en lugar de eliminarla.',
+            ], 409);
+        }
+
+        $sellerName = $seller->name;
+        $sellerEmail = $seller->email;
+        $sellerId = $seller->id;
+
+        $seller->tokens()->delete();
+        $seller->delete();
+
+        ActivityLog::query()->create([
+            'user_id' => $request->user()->id,
+            'accion' => 'Eliminación de vendedor',
+            'modelo' => User::class,
+            'modelo_id' => $sellerId,
+            'detalle' => "Se eliminó al vendedor {$sellerName} ({$sellerEmail}).",
+        ]);
+
+        return response()->json([
+            'message' => 'Vendedor eliminado correctamente.',
         ]);
     }
 }
