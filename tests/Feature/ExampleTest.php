@@ -10,10 +10,10 @@ class ExampleTest extends TestCase
     /**
      * A basic test example.
      */
-    public function test_the_application_redirects_to_the_web_app(): void
+    public function test_the_application_returns_the_web_entrypoint(): void
     {
         $response = $this->get('/');
 
-        $response->assertRedirect('/app/');
+        $response->assertOk()->assertSee('/app/');
     }
 }
