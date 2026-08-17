@@ -59,6 +59,34 @@ class SaleFlowTest extends TestCase
         $this->assertDatabaseCount('sales', 0);
     }
 
+    public function test_sale_is_allowed_when_stock_is_zero_or_insufficient(): void
+    {
+        [$seller, $sede, $product] = $this->scenario();
+        $this->openCash($seller, $sede);
+        ProductStock::query()->where('product_id', $product->id)->update(['stock' => 0]);
+
+        $response = $this->withToken($seller->createToken('seller')->plainTextToken)
+            ->postJson('/api/sales', [
+                'sede_id' => $sede->id,
+                'forma_pago' => 'efectivo',
+                'items' => [['product_id' => $product->id, 'cantidad' => 3, 'precio_vendido' => '10.00']],
+            ])
+            ->assertCreated()
+            ->assertJsonPath('sale.total', '30.00');
+
+        $this->assertDatabaseHas('product_stocks', [
+            'product_id' => $product->id,
+            'sede_id' => $sede->id,
+            'stock' => -3,
+        ]);
+        $this->assertDatabaseHas('inventory_movements', [
+            'origen_tipo' => 'venta',
+            'origen_id' => $response->json('sale.id'),
+            'stock_anterior' => 0,
+            'stock_nuevo' => -3,
+        ]);
+    }
+
     public function test_seller_cannot_operate_another_sede_or_view_another_sale(): void
     {
         [$seller, $sede] = $this->scenario();

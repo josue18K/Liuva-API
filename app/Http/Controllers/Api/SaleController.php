@@ -115,8 +115,12 @@ class SaleController extends Controller
                     ->first();
                 $quantity = (int) $item['cantidad'];
 
-                if (! $stock || $stock->stock < $quantity) {
-                    abort(422, 'Stock insuficiente para el producto: '.$product->nombre);
+                if (! $stock) {
+                    $stock = ProductStock::query()->create([
+                        'product_id' => $product->id,
+                        'sede_id' => $sedeId,
+                        'stock' => 0,
+                    ]);
                 }
 
                 $previousStock = $stock->stock;
