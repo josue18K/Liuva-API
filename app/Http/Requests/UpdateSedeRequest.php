@@ -19,6 +19,7 @@ class UpdateSedeRequest extends FormRequest
         return [
             'nombre' => ['required', 'string', 'max:150', Rule::unique('sedes', 'nombre')->ignore($sede)],
             'direccion' => ['nullable', 'string', 'max:255'],
+            'prefix_codigo' => ['nullable', 'string', 'max:10', Rule::unique('sedes', 'prefix_codigo')->ignore($sede)],
             'active' => ['required', 'boolean'],
         ];
     }

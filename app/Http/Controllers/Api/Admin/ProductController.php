@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\ActivityLog;
 use App\Models\Product;
+use App\Models\Sede;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -45,10 +46,15 @@ class ProductController extends Controller
 
     public function store(StoreProductRequest $request): JsonResponse
     {
+        $codigoInterno = $request->string('codigo_interno')->toString();
+        if (empty($codigoInterno)) {
+            $codigoInterno = $this->generateNextCode($request->integer('sede_id'));
+        }
+
         $product = Product::query()->create([
             'nombre' => $request->string('nombre'),
             'descripcion' => $request->filled('descripcion') ? $request->string('descripcion') : null,
-            'codigo_interno' => $request->string('codigo_interno'),
+            'codigo_interno' => $codigoInterno,
             'codigo_barras' => $request->filled('codigo_barras') ? $request->string('codigo_barras') : null,
             'precio_oficial' => $request->input('precio_oficial'),
             'unidad' => $request->string('unidad'),
@@ -106,5 +112,30 @@ class ProductController extends Controller
             'message' => 'Producto actualizado correctamente.',
             'product' => $product->load('category:id,nombre'),
         ]);
+    }
+
+    private function generateNextCode(?int $sedeId): string
+    {
+        $prefix = 'LIU';
+        if ($sedeId) {
+            $sede = Sede::find($sedeId);
+            if ($sede && $sede->prefix_codigo) {
+                $prefix = strtoupper($sede->prefix_codigo);
+            }
+        }
+
+        $lastProduct = Product::query()
+            ->where('codigo_interno', 'like', $prefix . '%')
+            ->orderByRaw("CAST(SUBSTRING(codigo_interno, " . (strlen($prefix) + 1) . ") AS UNSIGNED) DESC")
+            ->first();
+
+        if ($lastProduct) {
+            $lastNumber = (int) substr($lastProduct->codigo_interno, strlen($prefix));
+            $nextNumber = $lastNumber + 1;
+        } else {
+            $nextNumber = 1;
+        }
+
+        return $prefix . str_pad((string) $nextNumber, 3, '0', STR_PAD_LEFT);
     }
 }

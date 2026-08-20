@@ -2,16 +2,19 @@
 
 use App\Http\Controllers\Api\AccountController;
 use App\Http\Controllers\Api\Admin\ActivityLogController;
+use App\Http\Controllers\Api\Admin\AdminUserController;
 use App\Http\Controllers\Api\Admin\CategoryController;
 use App\Http\Controllers\Api\Admin\InventoryMovementController;
 use App\Http\Controllers\Api\Admin\InventoryReportController;
 use App\Http\Controllers\Api\Admin\LicenseController;
 use App\Http\Controllers\Api\Admin\ProductController;
+use App\Http\Controllers\Api\Admin\ResetSystemController;
 use App\Http\Controllers\Api\Admin\SedeController;
 use App\Http\Controllers\Api\Admin\SellerController;
 use App\Http\Controllers\Api\Admin\SettingController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CashRegisterController;
+use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\SaleController;
 use App\Http\Controllers\Api\SaleReceiptController;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +25,7 @@ Route::post('/register', [AccountController::class, 'register'])->middleware('th
 Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
     Route::post('/logout', [AuthController::class, 'logout']);
+    Route::put('/profile', [ProfileController::class, 'update']);
     Route::post('/account/activate', [AccountController::class, 'activate']);
 
     Route::middleware('account.active')->group(function () {
@@ -41,6 +45,11 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::get('/sellers/{seller}', [SellerController::class, 'show']);
             Route::put('/sellers/{seller}', [SellerController::class, 'update']);
             Route::delete('/sellers/{seller}', [SellerController::class, 'destroy']);
+
+            Route::get('/admins', [AdminUserController::class, 'index']);
+            Route::post('/admins', [AdminUserController::class, 'store']);
+            Route::put('/admins/{admin}', [AdminUserController::class, 'update']);
+            Route::delete('/admins/{admin}', [AdminUserController::class, 'destroy']);
 
             Route::get('/sedes', [SedeController::class, 'index']);
             Route::post('/sedes', [SedeController::class, 'store']);
@@ -68,6 +77,8 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::get('/settings', [SettingController::class, 'index']);
             Route::post('/settings', [SettingController::class, 'upsert']);
             Route::get('/settings/{key}', [SettingController::class, 'showByKey']);
+
+            Route::post('/reset-system', [ResetSystemController::class, 'reset']);
         });
 
         Route::middleware('role:admin,vendedor')->group(function () {

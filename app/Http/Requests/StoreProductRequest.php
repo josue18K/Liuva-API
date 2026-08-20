@@ -10,7 +10,7 @@ class StoreProductRequest extends FormRequest
     protected function prepareForValidation(): void
     {
         $this->merge([
-            'codigo_interno' => mb_strtoupper(trim((string) $this->input('codigo_interno'))),
+            'codigo_interno' => $this->filled('codigo_interno') ? mb_strtoupper(trim((string) $this->input('codigo_interno'))) : '',
             'codigo_barras' => $this->filled('codigo_barras') ? trim((string) $this->input('codigo_barras')) : null,
             'unidad' => mb_strtolower(trim((string) $this->input('unidad', 'unidad'))),
         ]);
@@ -26,7 +26,8 @@ class StoreProductRequest extends FormRequest
         return [
             'nombre' => ['required', 'string', 'max:255'],
             'descripcion' => ['nullable', 'string', 'max:2000'],
-            'codigo_interno' => ['required', 'string', 'max:100', 'unique:products,codigo_interno'],
+            'sede_id' => ['nullable', 'integer', 'exists:sedes,id'],
+            'codigo_interno' => ['nullable', 'string', 'max:100', 'unique:products,codigo_interno'],
             'codigo_barras' => ['nullable', 'string', 'regex:/^[0-9]{6,32}$/', 'unique:products,codigo_barras'],
             'precio_oficial' => ['required', 'decimal:0,2', 'min:0'],
             'unidad' => ['required', Rule::in(['unidad', 'par', 'docena', 'caja', 'paquete', 'metro', 'kilogramo'])],

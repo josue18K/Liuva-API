@@ -12,6 +12,7 @@ class Sede extends Model
     protected $fillable = [
         'nombre',
         'direccion',
+        'prefix_codigo',
         'active',
     ];
 

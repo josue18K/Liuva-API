@@ -16,6 +16,7 @@ class StoreSedeRequest extends FormRequest
         return [
             'nombre' => ['required', 'string', 'max:150', 'unique:sedes,nombre'],
             'direccion' => ['nullable', 'string', 'max:255'],
+            'prefix_codigo' => ['nullable', 'string', 'max:10', 'unique:sedes,prefix_codigo'],
             'active' => ['nullable', 'boolean'],
         ];
     }

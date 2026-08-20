@@ -25,6 +25,7 @@ class SedeController extends Controller
         $sede = Sede::query()->create([
             'nombre' => $request->string('nombre'),
             'direccion' => $request->string('direccion'),
+            'prefix_codigo' => $request->filled('prefix_codigo') ? strtoupper($request->string('prefix_codigo')) : null,
             'active' => $request->boolean('active', true),
         ]);
 
@@ -54,6 +55,7 @@ class SedeController extends Controller
         $sede->update([
             'nombre' => $request->string('nombre'),
             'direccion' => $request->string('direccion'),
+            'prefix_codigo' => $request->filled('prefix_codigo') ? strtoupper($request->string('prefix_codigo')) : null,
             'active' => $request->boolean('active'),
         ]);
 
