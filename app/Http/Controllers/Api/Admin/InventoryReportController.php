@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ProductStock;
 use App\Models\Sede;
+use App\Models\User;
 use Dompdf\Dompdf;
 use Dompdf\Options;
 use Illuminate\Http\JsonResponse;
@@ -15,12 +16,14 @@ class InventoryReportController extends Controller
 {
     public function bySede(Request $request, Sede $sede): JsonResponse
     {
+        $this->authorizeSede($request, $sede);
         $stocks = $this->stocks($request, $sede);
 
         $lines = [];
         $lines[] = '📦 REPORTE DE INVENTARIO';
         $lines[] = "Sede: {$sede->nombre}";
         $lines[] = 'Fecha: '.now()->format('d/m/Y H:i');
+        $lines[] = 'Registrado por: '.$request->user()->name;
         $lines[] = str_repeat('-', 30);
 
         foreach ($stocks as $row) {
@@ -71,6 +74,7 @@ class InventoryReportController extends Controller
 
     public function pdf(Request $request, Sede $sede): Response
     {
+        $this->authorizeSede($request, $sede);
         $stocks = $this->stocks($request, $sede);
         $options = new Options;
         $options->set('defaultFont', 'DejaVu Sans');
@@ -81,6 +85,7 @@ class InventoryReportController extends Controller
             'sede' => $sede,
             'stocks' => $stocks,
             'generatedAt' => now(),
+            'generatedBy' => $request->user()->name,
         ])->render());
         $dompdf->setPaper('a4', 'portrait');
         $dompdf->render();
@@ -114,5 +119,12 @@ class InventoryReportController extends Controller
             ->when($request->boolean('solo_con_stock'), fn ($query) => $query->where('stock', '>', 0))
             ->orderBy('product_id')
             ->get();
+    }
+
+    private function authorizeSede(Request $request, Sede $sede): void
+    {
+        if ($request->user()->role === User::ROLE_SELLER && $request->user()->sede_id !== $sede->id) {
+            abort(403, 'Solo puedes consultar reportes de tu sede asignada.');
+        }
     }
 }

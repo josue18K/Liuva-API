@@ -72,6 +72,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
             Route::get('/inventory-movements', [InventoryMovementController::class, 'index']);
             Route::post('/inventory-movements', [InventoryMovementController::class, 'store']);
+            Route::get('/inventory-analytics', [InventoryMovementController::class, 'analytics']);
 
             Route::get('/inventory-reports/sede/{sede}', [InventoryReportController::class, 'bySede']);
             Route::get('/inventory-reports/sede/{sede}/pdf', [InventoryReportController::class, 'pdf']);
@@ -87,12 +88,21 @@ Route::middleware('auth:sanctum')->group(function () {
         });
 
         Route::middleware('role:admin,vendedor')->group(function () {
+            Route::get('/catalog/products', [ProductController::class, 'index']);
+            Route::get('/catalog/categories', [CategoryController::class, 'index']);
+            Route::get('/catalog/sedes', [SedeController::class, 'index']);
+            Route::get('/inventory/movements', [InventoryMovementController::class, 'index']);
+            Route::post('/inventory/movements', [InventoryMovementController::class, 'store']);
+            Route::get('/inventory/analytics', [InventoryMovementController::class, 'analytics']);
+            Route::get('/inventory/reports/sede/{sede}', [InventoryReportController::class, 'bySede']);
+            Route::get('/inventory/reports/sede/{sede}/pdf', [InventoryReportController::class, 'pdf']);
             Route::get('/sales/search-products', [SaleController::class, 'searchProducts']);
             Route::get('/sales', [SaleController::class, 'index']);
             Route::post('/sales', [SaleController::class, 'store']);
             Route::get('/sales/{sale}', [SaleController::class, 'show']);
             Route::post('/sales/{sale}/generate-receipt', [SaleReceiptController::class, 'generate']);
 
+            // Compatibilidad de API: Caja ya no aparece en la aplicación principal.
             Route::get('/cash-registers', [CashRegisterController::class, 'index']);
             Route::get('/cash-registers/{cashRegister}', [CashRegisterController::class, 'show']);
             Route::post('/cash-registers/open', [CashRegisterController::class, 'open']);

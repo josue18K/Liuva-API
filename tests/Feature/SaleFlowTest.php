@@ -44,7 +44,7 @@ class SaleFlowTest extends TestCase
         ]);
     }
 
-    public function test_sale_requires_open_cash_and_preserves_stock_on_failure(): void
+    public function test_manual_sale_does_not_require_open_cash(): void
     {
         [$seller, $sede, $product] = $this->scenario();
 
@@ -53,10 +53,11 @@ class SaleFlowTest extends TestCase
                 'sede_id' => $sede->id,
                 'forma_pago' => 'efectivo',
                 'items' => [['product_id' => $product->id, 'cantidad' => 1, 'precio_vendido' => '10.00']],
-            ])->assertUnprocessable();
+            ])->assertCreated()
+            ->assertJsonPath('sale.cash_register_id', null);
 
-        $this->assertDatabaseHas('product_stocks', ['product_id' => $product->id, 'stock' => 10]);
-        $this->assertDatabaseCount('sales', 0);
+        $this->assertDatabaseHas('product_stocks', ['product_id' => $product->id, 'stock' => 9]);
+        $this->assertDatabaseCount('sales', 1);
     }
 
     public function test_sale_is_allowed_when_stock_is_zero_or_insufficient(): void

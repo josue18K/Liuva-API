@@ -85,18 +85,13 @@ class SaleController extends Controller
         $this->ensureSedeAccess($request, $sedeId);
 
         $sale = DB::transaction(function () use ($request, $sedeId): Sale {
-            $cashRegister = CashRegister::query()
+            $cashRegisterId = CashRegister::query()
                 ->where('user_id', $request->user()->id)
                 ->where('sede_id', $sedeId)
                 ->where('tipo', 'apertura')
                 ->whereDoesntHave('children')
-                ->lockForUpdate()
                 ->latest('fecha_hora')
-                ->first();
-
-            if (! $cashRegister) {
-                abort(422, 'Debes abrir una caja antes de registrar ventas.');
-            }
+                ->value('id');
 
             $preparedItems = [];
             $totalCents = 0;
@@ -139,7 +134,7 @@ class SaleController extends Controller
             $sale = Sale::query()->create([
                 'user_id' => $request->user()->id,
                 'sede_id' => $sedeId,
-                'cash_register_id' => $cashRegister->id,
+                'cash_register_id' => $cashRegisterId,
                 'forma_pago' => $request->string('forma_pago'),
                 'total' => $this->fromCents($totalCents),
                 'comprobante_token' => (string) Str::uuid(),
@@ -172,17 +167,17 @@ class SaleController extends Controller
 
             ActivityLog::query()->create([
                 'user_id' => $request->user()->id,
-                'accion' => 'Registro de venta',
+                'accion' => 'Registro de venta manual',
                 'modelo' => Sale::class,
                 'modelo_id' => $sale->id,
-                'detalle' => 'Venta '.$sale->comprobante_numero.' por S/ '.$sale->total.'.',
+                'detalle' => 'Venta manual '.$sale->comprobante_numero.' por S/ '.$sale->total.'.',
             ]);
 
             return $sale;
         });
 
         return response()->json([
-            'message' => 'Venta registrada correctamente.',
+            'message' => 'Venta manual registrada correctamente.',
             'sale' => $this->loadSale($sale),
         ], 201);
     }

@@ -35,7 +35,7 @@
     <section class="header">
         <div class="brand">Liuva</div>
         <h1>Inventario de {{ $sede->nombre }}</h1>
-        <div class="meta">Generado el {{ $generatedAt->format('d/m/Y') }} a las {{ $generatedAt->format('H:i') }}</div>
+        <div class="meta">Generado el {{ $generatedAt->format('d/m/Y') }} a las {{ $generatedAt->format('H:i') }} · Por: {{ $generatedBy }}</div>
     </section>
     <div class="summary"><strong>{{ $stocks->count() }}</strong> productos incluidos en este reporte.</div>
     <table>

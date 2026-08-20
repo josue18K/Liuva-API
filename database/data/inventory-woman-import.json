@@ -1,0 +1,1782 @@
+{
+  "products": [
+    {
+      "name": "COLONIA + CREMA CORPORAL 250ML",
+      "category": "CUIDADO DE LA PIEL",
+      "price": 17.99,
+      "stock": 0,
+      "source_row": 6
+    },
+    {
+      "name": "CREMA HIDRATANTE WOKALI",
+      "category": "CUIDADO DE LA PIEL",
+      "price": 17.9,
+      "stock": 10,
+      "source_row": 7
+    },
+    {
+      "name": "EXFOLIANTE DE LABIOS",
+      "category": "CUIDADO DE LA PIEL",
+      "price": 14.9,
+      "stock": 22,
+      "source_row": 8
+    },
+    {
+      "name": "EXFOLIANTE GEL WOKALI",
+      "category": "CUIDADO DE LA PIEL",
+      "price": 9.9,
+      "stock": 9,
+      "source_row": 9
+    },
+    {
+      "name": "KIT LIMPIADOR FACIAL MADISON",
+      "category": "CUIDADO DE LA PIEL",
+      "price": 24.9,
+      "stock": 6,
+      "source_row": 10
+    },
+    {
+      "name": "LIMPIADOR FACIAL FACEWASH DR RASHEL",
+      "category": "CUIDADO DE LA PIEL",
+      "price": 14.9,
+      "stock": 9,
+      "source_row": 11
+    },
+    {
+      "name": "MASCARILLA FACIAL WOKALI",
+      "category": "CUIDADO DE LA PIEL",
+      "price": 2.99,
+      "stock": 25,
+      "source_row": 12
+    },
+    {
+      "name": "PARCHE DE OJOS",
+      "category": "CUIDADO DE LA PIEL",
+      "price": 16.9,
+      "stock": 22,
+      "source_row": 13
+    },
+    {
+      "name": "PROTECTOR SOLAR ESTELIN",
+      "category": "CUIDADO DE LA PIEL",
+      "price": 19.9,
+      "stock": 22,
+      "source_row": 14
+    },
+    {
+      "name": "SUERO DE LECHE DE BURRA",
+      "category": "CUIDADO DE LA PIEL",
+      "price": 14.9,
+      "stock": 10,
+      "source_row": 15
+    },
+    {
+      "name": "AGB90 POLVO COMPACTO Y SUELTO",
+      "category": "COSMETICOS",
+      "price": 13.9,
+      "stock": 9,
+      "source_row": 22
+    },
+    {
+      "name": "AGC100B CORRECTOR",
+      "category": "COSMETICOS",
+      "price": 6.99,
+      "stock": 5,
+      "source_row": 23
+    },
+    {
+      "name": "AGC40 CONTORNO LIQUIDO",
+      "category": "COSMETICOS",
+      "price": 5.49,
+      "stock": 12,
+      "source_row": 24
+    },
+    {
+      "name": "AGD170 DELINEADOR PUNTA",
+      "category": "COSMETICOS",
+      "price": 4.99,
+      "stock": 9,
+      "source_row": 25
+    },
+    {
+      "name": "AGF300 PRIMER BASE",
+      "category": "COSMETICOS",
+      "price": 8.49,
+      "stock": 0,
+      "source_row": 26
+    },
+    {
+      "name": "AGF400 SPRAY SELLADOR",
+      "category": "COSMETICOS",
+      "price": 8.49,
+      "stock": 0,
+      "source_row": 27
+    },
+    {
+      "name": "AGI140 ILUMINADOR",
+      "category": "COSMETICOS",
+      "price": 5.99,
+      "stock": 5,
+      "source_row": 28
+    },
+    {
+      "name": "AGL460 LABIAL KISS",
+      "category": "COSMETICOS",
+      "price": 3.49,
+      "stock": 0,
+      "source_row": 29
+    },
+    {
+      "name": "AGL560 LABIAL LATINA",
+      "category": "COSMETICOS",
+      "price": 3.99,
+      "stock": 3,
+      "source_row": 30
+    },
+    {
+      "name": "AGL650 SUBLIME",
+      "category": "COSMETICOS",
+      "price": 6.99,
+      "stock": 17,
+      "source_row": 31
+    },
+    {
+      "name": "AGL690 LIP GLOSS",
+      "category": "COSMETICOS",
+      "price": 6.99,
+      "stock": 5,
+      "source_row": 32
+    },
+    {
+      "name": "AGL700 AZUCENA",
+      "category": "COSMETICOS",
+      "price": 6.99,
+      "stock": 19,
+      "source_row": 33
+    },
+    {
+      "name": "AGP102 POLVO COMPACTO",
+      "category": "COSMETICOS",
+      "price": 7.49,
+      "stock": 1,
+      "source_row": 34
+    },
+    {
+      "name": "AGP160 POLVOS SUELTOS",
+      "category": "COSMETICOS",
+      "price": 8.49,
+      "stock": 0,
+      "source_row": 35
+    },
+    {
+      "name": "AGR107 HECHIZADA RIMEL",
+      "category": "COSMETICOS",
+      "price": 5.49,
+      "stock": 0,
+      "source_row": 36
+    },
+    {
+      "name": "AGR150 RIMEL CON COLAGENO",
+      "category": "COSMETICOS",
+      "price": 4.49,
+      "stock": 0,
+      "source_row": 37
+    },
+    {
+      "name": "AGS132 SOMBRAS TERRA",
+      "category": "COSMETICOS",
+      "price": 6.99,
+      "stock": 0,
+      "source_row": 38
+    },
+    {
+      "name": "AGS140 PALETA DE SOMBRAS",
+      "category": "COSMETICOS",
+      "price": 7.49,
+      "stock": 4,
+      "source_row": 39
+    },
+    {
+      "name": "AGS800 SOMBRA INTI",
+      "category": "COSMETICOS",
+      "price": 14.9,
+      "stock": 3,
+      "source_row": 40
+    },
+    {
+      "name": "AGTI20 TINTE LABIOS",
+      "category": "COSMETICOS",
+      "price": 2.99,
+      "stock": 0,
+      "source_row": 41
+    },
+    {
+      "name": "AGZ10 LAPIZ PARA CEJAS",
+      "category": "COSMETICOS",
+      "price": 5.49,
+      "stock": 0,
+      "source_row": 42
+    },
+    {
+      "name": "COLONIA 175ML CAJA TUINIES",
+      "category": "COSMETICOS",
+      "price": 12.9,
+      "stock": 0,
+      "source_row": 43
+    },
+    {
+      "name": "COLONIA BABY MIST 200ML TUINIES",
+      "category": "COSMETICOS",
+      "price": 11.9,
+      "stock": 24,
+      "source_row": 44
+    },
+    {
+      "name": "COLONIA BODY MIST 175ML TUINIES",
+      "category": "COSMETICOS",
+      "price": 11.9,
+      "stock": 0,
+      "source_row": 45
+    },
+    {
+      "name": "ESPONJA EXFOLIANTE",
+      "category": "COSMETICOS",
+      "price": 1.99,
+      "stock": 13,
+      "source_row": 46
+    },
+    {
+      "name": "ESPONJA PARA MAQUILLAJE",
+      "category": "COSMETICOS",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 47
+    },
+    {
+      "name": "M2036 LABIAL LIQUIDO MANSLY",
+      "category": "COSMETICOS",
+      "price": 8.49,
+      "stock": 21,
+      "source_row": 48
+    },
+    {
+      "name": "M2056 LABIAL LIQUIDO MANSLY",
+      "category": "COSMETICOS",
+      "price": 6.99,
+      "stock": 11,
+      "source_row": 49
+    },
+    {
+      "name": "M2058 LIPGLOSS MANSLY",
+      "category": "COSMETICOS",
+      "price": 8.99,
+      "stock": 28,
+      "source_row": 50
+    },
+    {
+      "name": "PACK 3PZ ESPONJA MAQUILLAJE",
+      "category": "COSMETICOS",
+      "price": 2.49,
+      "stock": 2,
+      "source_row": 51
+    },
+    {
+      "name": "PERFUME BAHIA HOMBRE",
+      "category": "COSMETICOS",
+      "price": 14.9,
+      "stock": 0,
+      "source_row": 52
+    },
+    {
+      "name": "PERFUME BAHIA MUJER",
+      "category": "COSMETICOS",
+      "price": 14.9,
+      "stock": 0,
+      "source_row": 53
+    },
+    {
+      "name": "PERFUME SAFIROS MUJER",
+      "category": "COSMETICOS",
+      "price": 16.9,
+      "stock": 0,
+      "source_row": 54
+    },
+    {
+      "name": "TF623 RUBOR LIQUIDO",
+      "category": "COSMETICOS",
+      "price": 4.99,
+      "stock": 1,
+      "source_row": 55
+    },
+    {
+      "name": "TS644 BASE TIEESIEE",
+      "category": "COSMETICOS",
+      "price": 6.99,
+      "stock": 0,
+      "source_row": 56
+    },
+    {
+      "name": "TS855 LABIAL BRILLO",
+      "category": "COSMETICOS",
+      "price": 4.99,
+      "stock": 3,
+      "source_row": 57
+    },
+    {
+      "name": "TS864 ONLY YOU TREESIE",
+      "category": "COSMETICOS",
+      "price": 7.49,
+      "stock": 15,
+      "source_row": 58
+    },
+    {
+      "name": "TS915 LIP OIL",
+      "category": "COSMETICOS",
+      "price": 3.99,
+      "stock": 0,
+      "source_row": 59
+    },
+    {
+      "name": "AFEITADORAS DE CEJAS 3PZS",
+      "category": "HERRAMIENTAS DE ASEO PERSONAL",
+      "price": 2.49,
+      "stock": 0,
+      "source_row": 66
+    },
+    {
+      "name": "CORTA UÑA 3PZS",
+      "category": "HERRAMIENTAS DE ASEO PERSONAL",
+      "price": 2.99,
+      "stock": 0,
+      "source_row": 67
+    },
+    {
+      "name": "LIMA DE UÑAS",
+      "category": "HERRAMIENTAS DE ASEO PERSONAL",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 68
+    },
+    {
+      "name": "PINZAS PARA CEJAS 2PZ",
+      "category": "HERRAMIENTAS DE ASEO PERSONAL",
+      "price": 1.99,
+      "stock": 0,
+      "source_row": 69
+    },
+    {
+      "name": "REMOVEDOR DEESPINILLAS Y PUNTOS NEGROS",
+      "category": "HERRAMIENTAS DE ASEO PERSONAL",
+      "price": 1.99,
+      "stock": 0,
+      "source_row": 70
+    },
+    {
+      "name": "RIZADOR DE METAL",
+      "category": "HERRAMIENTAS DE ASEO PERSONAL",
+      "price": 2.99,
+      "stock": 0,
+      "source_row": 71
+    },
+    {
+      "name": "RIZADOR PREMIUN",
+      "category": "HERRAMIENTAS DE ASEO PERSONAL",
+      "price": 3.49,
+      "stock": 0,
+      "source_row": 72
+    },
+    {
+      "name": "TIJERAS PARA CEJAS CURVADAS",
+      "category": "HERRAMIENTAS DE ASEO PERSONAL",
+      "price": 1.99,
+      "stock": 3,
+      "source_row": 73
+    },
+    {
+      "name": "BYWIN PACK X2 BEBE",
+      "category": "ASEO PERSONAL",
+      "price": 16.9,
+      "stock": 1,
+      "source_row": 80
+    },
+    {
+      "name": "CARTUCHERA CEPILLO PASTA TUINIES",
+      "category": "ASEO PERSONAL",
+      "price": 7.99,
+      "stock": 10,
+      "source_row": 81
+    },
+    {
+      "name": "DESENREDANTE 300ML TUINIES",
+      "category": "ASEO PERSONAL",
+      "price": 11.9,
+      "stock": 0,
+      "source_row": 82
+    },
+    {
+      "name": "DESMAQUILLANTE KITTY",
+      "category": "ASEO PERSONAL",
+      "price": 4.99,
+      "stock": 65,
+      "source_row": 83
+    },
+    {
+      "name": "DESODORANTE SKY HOMBRE",
+      "category": "ASEO PERSONAL",
+      "price": 7.99,
+      "stock": 4,
+      "source_row": 84
+    },
+    {
+      "name": "DESODORANTE SKY MUJER",
+      "category": "ASEO PERSONAL",
+      "price": 7.99,
+      "stock": 0,
+      "source_row": 85
+    },
+    {
+      "name": "ELA DIARIO",
+      "category": "ASEO PERSONAL",
+      "price": 2.49,
+      "stock": 43,
+      "source_row": 86
+    },
+    {
+      "name": "ELA NOCTURNA",
+      "category": "ASEO PERSONAL",
+      "price": 4.99,
+      "stock": 68,
+      "source_row": 87
+    },
+    {
+      "name": "ELA NORMAL",
+      "category": "ASEO PERSONAL",
+      "price": 3.49,
+      "stock": 70,
+      "source_row": 88
+    },
+    {
+      "name": "ELA ULTRA DELGADA",
+      "category": "ASEO PERSONAL",
+      "price": 3.49,
+      "stock": 75,
+      "source_row": 89
+    },
+    {
+      "name": "ESPONJA DE DUCHA",
+      "category": "ASEO PERSONAL",
+      "price": 2.99,
+      "stock": 0,
+      "source_row": 90
+    },
+    {
+      "name": "GEL DE CABELLO 1KG",
+      "category": "ASEO PERSONAL",
+      "price": 14.9,
+      "stock": 5,
+      "source_row": 91
+    },
+    {
+      "name": "HISOPO KITTY 400PZ",
+      "category": "ASEO PERSONAL",
+      "price": 6.99,
+      "stock": 33,
+      "source_row": 92
+    },
+    {
+      "name": "JABON LIQUIDO 250ML TUINIES",
+      "category": "ASEO PERSONAL",
+      "price": 8.99,
+      "stock": 4,
+      "source_row": 93
+    },
+    {
+      "name": "KIT PERFUMER RELOJ VARON",
+      "category": "ASEO PERSONAL",
+      "price": 29.9,
+      "stock": 0,
+      "source_row": 94
+    },
+    {
+      "name": "PAÑITO 25PZ",
+      "category": "ASEO PERSONAL",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 95
+    },
+    {
+      "name": "SHAMPOO 2EN1 FROZEN 236 ML TUINIES",
+      "category": "ASEO PERSONAL",
+      "price": 8.99,
+      "stock": 8,
+      "source_row": 96
+    },
+    {
+      "name": "SHAMPOO CANAS EN CAJA",
+      "category": "ASEO PERSONAL",
+      "price": 14.99,
+      "stock": 3,
+      "source_row": 97
+    },
+    {
+      "name": "SHAMPOO KITTY 300ML 3EN1",
+      "category": "ASEO PERSONAL",
+      "price": 10.9,
+      "stock": 9,
+      "source_row": 98
+    },
+    {
+      "name": "SHAMPOO MARVEL 350ML 3 EN 1 TUINIES",
+      "category": "ASEO PERSONAL",
+      "price": 15.9,
+      "stock": 7,
+      "source_row": 99
+    },
+    {
+      "name": "TALCO 100GR TUINIES",
+      "category": "ASEO PERSONAL",
+      "price": 4.99,
+      "stock": 57,
+      "source_row": 100
+    },
+    {
+      "name": "TALCO 750GR TUINIES",
+      "category": "ASEO PERSONAL",
+      "price": 12.9,
+      "stock": 10,
+      "source_row": 101
+    },
+    {
+      "name": "TOALLA CABELLO",
+      "category": "ASEO PERSONAL",
+      "price": 3.49,
+      "stock": 35,
+      "source_row": 102
+    },
+    {
+      "name": "TOALLITAS HUMEDAS 8PACKS TUINIES",
+      "category": "ASEO PERSONAL",
+      "price": 4.99,
+      "stock": 23,
+      "source_row": 103
+    },
+    {
+      "name": "ELA NORMAL ECONOPACK 42PZ",
+      "category": "ASEO PERSONAL",
+      "price": 0,
+      "stock": 12,
+      "source_row": 104
+    },
+    {
+      "name": "ELA NOCTURNA ECONOPACK 30PZ",
+      "category": "ASEO PERSONAL",
+      "price": 0,
+      "stock": 24,
+      "source_row": 105
+    },
+    {
+      "name": "ELA DIARIO ECONOPACK 150PZ",
+      "category": "ASEO PERSONAL",
+      "price": 0,
+      "stock": 12,
+      "source_row": 106
+    },
+    {
+      "name": "TOALLITAS TUINIES 25PZ",
+      "category": "ASEO PERSONAL",
+      "price": 0,
+      "stock": 144,
+      "source_row": 107
+    },
+    {
+      "name": "TOALLITAS TUINIES 100PZ",
+      "category": "ASEO PERSONAL",
+      "price": 0,
+      "stock": 36,
+      "source_row": 108
+    },
+    {
+      "name": "TOALLITAS TUINIES BEBE 200PZ",
+      "category": "ASEO PERSONAL",
+      "price": 0,
+      "stock": 18,
+      "source_row": 109
+    },
+    {
+      "name": "BUFANDA LAZO DISEÑO",
+      "category": "ARREGLO ESTETICO",
+      "price": 7.99,
+      "stock": 16,
+      "source_row": 117
+    },
+    {
+      "name": "MECHAS COLORES",
+      "category": "ARREGLO ESTETICO",
+      "price": 2.99,
+      "stock": 34,
+      "source_row": 118
+    },
+    {
+      "name": "PAÑOLETA DISEÑO",
+      "category": "ARREGLO ESTETICO",
+      "price": 3.99,
+      "stock": 16,
+      "source_row": 119
+    },
+    {
+      "name": "PESTAÑAS 5D",
+      "category": "ARREGLO ESTETICO",
+      "price": 4.99,
+      "stock": 30,
+      "source_row": 120
+    },
+    {
+      "name": "UÑAS EYES CAT",
+      "category": "ARREGLO ESTETICO",
+      "price": 6.99,
+      "stock": 0,
+      "source_row": 121
+    },
+    {
+      "name": "ARETES COLOR DISEÑOS",
+      "category": "BISUTERIA",
+      "price": 3.99,
+      "stock": 19,
+      "source_row": 128
+    },
+    {
+      "name": "ARETES METAL PIEDRAS",
+      "category": "BISUTERIA",
+      "price": 4.49,
+      "stock": 17,
+      "source_row": 129
+    },
+    {
+      "name": "CAJITAS COLETS",
+      "category": "BISUTERIA",
+      "price": 4.49,
+      "stock": 17,
+      "source_row": 130
+    },
+    {
+      "name": "CAPIBARA IMANTADO",
+      "category": "BISUTERIA",
+      "price": 2.49,
+      "stock": 0,
+      "source_row": 131
+    },
+    {
+      "name": "CEPILLO CON ESPEJO",
+      "category": "BISUTERIA",
+      "price": 2.99,
+      "stock": 5,
+      "source_row": 132
+    },
+    {
+      "name": "CEPILLO DE CABELLO ECO",
+      "category": "BISUTERIA",
+      "price": 3.99,
+      "stock": 0,
+      "source_row": 133
+    },
+    {
+      "name": "CEPILLO DE CABELLO PREMIUN",
+      "category": "BISUTERIA",
+      "price": 4.49,
+      "stock": 0,
+      "source_row": 134
+    },
+    {
+      "name": "COLET NEGRO 6PZ",
+      "category": "BISUTERIA",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 135
+    },
+    {
+      "name": "COLETS X3",
+      "category": "BISUTERIA",
+      "price": 2.49,
+      "stock": 8,
+      "source_row": 136
+    },
+    {
+      "name": "COLETS X4",
+      "category": "BISUTERIA",
+      "price": 3.49,
+      "stock": 0,
+      "source_row": 137
+    },
+    {
+      "name": "COLLAR PENDIENTES",
+      "category": "BISUTERIA",
+      "price": 9.9,
+      "stock": 17,
+      "source_row": 138
+    },
+    {
+      "name": "GANCHITO MUJER 2PZ",
+      "category": "BISUTERIA",
+      "price": 3.99,
+      "stock": 1,
+      "source_row": 139
+    },
+    {
+      "name": "GANCHITOS OJON",
+      "category": "BISUTERIA",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 140
+    },
+    {
+      "name": "GANCHO COLET 5 PZ",
+      "category": "BISUTERIA",
+      "price": 6.49,
+      "stock": 2,
+      "source_row": 141
+    },
+    {
+      "name": "GANCHO DE METAL",
+      "category": "BISUTERIA",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 142
+    },
+    {
+      "name": "GANCHO PICO MARIPOSA",
+      "category": "BISUTERIA",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 143
+    },
+    {
+      "name": "GANCHOS COLETS 4 PZ CUADRADO",
+      "category": "BISUTERIA",
+      "price": 5.49,
+      "stock": 7,
+      "source_row": 144
+    },
+    {
+      "name": "GANCHOS COLETS 4 PZ FLOR",
+      "category": "BISUTERIA",
+      "price": 5.49,
+      "stock": 25,
+      "source_row": 145
+    },
+    {
+      "name": "GANCHOS VARIOS",
+      "category": "BISUTERIA",
+      "price": 1.99,
+      "stock": 12,
+      "source_row": 146
+    },
+    {
+      "name": "HORQUILLAS PARA CABELLO 20PZS",
+      "category": "BISUTERIA",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 147
+    },
+    {
+      "name": "LIGAS EN TUBO",
+      "category": "BISUTERIA",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 148
+    },
+    {
+      "name": "LLAVERO LA BUBU",
+      "category": "BISUTERIA",
+      "price": 3.49,
+      "stock": 25,
+      "source_row": 149
+    },
+    {
+      "name": "LLAVERO OSITO NEGRO",
+      "category": "BISUTERIA",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 150
+    },
+    {
+      "name": "LLAVEROS SURTIDOS",
+      "category": "BISUTERIA",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 151
+    },
+    {
+      "name": "MINI COLETS 50PZ",
+      "category": "BISUTERIA",
+      "price": 2.99,
+      "stock": 0,
+      "source_row": 152
+    },
+    {
+      "name": "MINI SET NIÑA DISEÑOS",
+      "category": "BISUTERIA",
+      "price": 7.49,
+      "stock": 3,
+      "source_row": 153
+    },
+    {
+      "name": "PALITO CHINO DISEÑO",
+      "category": "BISUTERIA",
+      "price": 7.9,
+      "stock": 8,
+      "source_row": 154
+    },
+    {
+      "name": "PEINE DE CABELLO",
+      "category": "BISUTERIA",
+      "price": 1.99,
+      "stock": 0,
+      "source_row": 155
+    },
+    {
+      "name": "PICO PATO 2 PZ FLOR",
+      "category": "BISUTERIA",
+      "price": 4.99,
+      "stock": 6,
+      "source_row": 156
+    },
+    {
+      "name": "PICO PATO 2 PZ MOÑO",
+      "category": "BISUTERIA",
+      "price": 4.49,
+      "stock": 16,
+      "source_row": 157
+    },
+    {
+      "name": "PILIMINI 3PZ",
+      "category": "BISUTERIA",
+      "price": 2.49,
+      "stock": 5,
+      "source_row": 158
+    },
+    {
+      "name": "PULCERA ACERO",
+      "category": "BISUTERIA",
+      "price": 10.9,
+      "stock": 22,
+      "source_row": 159
+    },
+    {
+      "name": "SET GANCHITOS 12PZ",
+      "category": "BISUTERIA",
+      "price": 2.49,
+      "stock": 7,
+      "source_row": 160
+    },
+    {
+      "name": "VINCHA COLET 2 PZ",
+      "category": "BISUTERIA",
+      "price": 4.99,
+      "stock": 27,
+      "source_row": 161
+    },
+    {
+      "name": "VINCHA DE TELA",
+      "category": "BISUTERIA",
+      "price": 2.99,
+      "stock": 0,
+      "source_row": 162
+    },
+    {
+      "name": "VINCHA MAQUILLAJE 4 PZ",
+      "category": "BISUTERIA",
+      "price": 8.99,
+      "stock": 4,
+      "source_row": 163
+    },
+    {
+      "name": "VINCHA PLASTICA",
+      "category": "BISUTERIA",
+      "price": 2.49,
+      "stock": 0,
+      "source_row": 164
+    },
+    {
+      "name": "BEBIDA CARBONATADA 450ML",
+      "category": "DULCES",
+      "price": 5.99,
+      "stock": 6,
+      "source_row": 171
+    },
+    {
+      "name": "CARAMELO BLANDO 40GR SACHET",
+      "category": "DULCES",
+      "price": 4.49,
+      "stock": 0,
+      "source_row": 172
+    },
+    {
+      "name": "CARAMELO DE ARROZ",
+      "category": "DULCES",
+      "price": 12.49,
+      "stock": 7,
+      "source_row": 173
+    },
+    {
+      "name": "CARAMELO DE COCO 200GR",
+      "category": "DULCES",
+      "price": 13.9,
+      "stock": 0,
+      "source_row": 174
+    },
+    {
+      "name": "CARAMELO GENGIBRE 200GR",
+      "category": "DULCES",
+      "price": 8.99,
+      "stock": 0,
+      "source_row": 175
+    },
+    {
+      "name": "CARAMELO MASTICABLE 22GR",
+      "category": "DULCES",
+      "price": 1.49,
+      "stock": 0,
+      "source_row": 176
+    },
+    {
+      "name": "CHOCO CHOCKY",
+      "category": "DULCES",
+      "price": 4.49,
+      "stock": 149,
+      "source_row": 177
+    },
+    {
+      "name": "CHUPETIN BOLSA 20PZ",
+      "category": "DULCES",
+      "price": 14.9,
+      "stock": 0,
+      "source_row": 178
+    },
+    {
+      "name": "CONO DE HELADO C/RELLENO",
+      "category": "DULCES",
+      "price": 13.9,
+      "stock": 0,
+      "source_row": 179
+    },
+    {
+      "name": "GALLETA 264GR PQT",
+      "category": "DULCES",
+      "price": 7.49,
+      "stock": 1,
+      "source_row": 180
+    },
+    {
+      "name": "GALLETA BASTON C/RELLENO 14GR PQT",
+      "category": "DULCES",
+      "price": 8.99,
+      "stock": 0,
+      "source_row": 181
+    },
+    {
+      "name": "GALLETA C/RELLENO 184GR",
+      "category": "DULCES",
+      "price": 10.9,
+      "stock": 0,
+      "source_row": 182
+    },
+    {
+      "name": "GALLETA C/RELLENO FRUIT FUN 85 GR",
+      "category": "DULCES",
+      "price": 4.99,
+      "stock": 17,
+      "source_row": 183
+    },
+    {
+      "name": "GALLETA CIRCULAR C/RELLENO 443GR PQT",
+      "category": "DULCES",
+      "price": 17.9,
+      "stock": 2,
+      "source_row": 184
+    },
+    {
+      "name": "GALLETA OSITO CAJA 48GR",
+      "category": "DULCES",
+      "price": 0,
+      "stock": 21,
+      "source_row": 185
+    },
+    {
+      "name": "GELATINA BEBIBLE 480ML",
+      "category": "DULCES",
+      "price": 13.9,
+      "stock": 0,
+      "source_row": 186
+    },
+    {
+      "name": "JALEA BEBIBLE",
+      "category": "DULCES",
+      "price": 3.99,
+      "stock": 0,
+      "source_row": 187
+    },
+    {
+      "name": "PAPA FRITA LATA 40GR",
+      "category": "DULCES",
+      "price": 4.99,
+      "stock": 0,
+      "source_row": 188
+    },
+    {
+      "name": "PUDIN DE LECHE 4PZ",
+      "category": "DULCES",
+      "price": 10.9,
+      "stock": 1,
+      "source_row": 189
+    },
+    {
+      "name": "FILTRANTES IMPORTADOS",
+      "category": "DULCES",
+      "price": 0,
+      "stock": 164,
+      "source_row": 190
+    },
+    {
+      "name": "MEDIA CARNERO MUJER",
+      "category": "PRENDAS DE VESTIR",
+      "price": 5.99,
+      "stock": 0,
+      "source_row": 197
+    },
+    {
+      "name": "PANTI NIÑA",
+      "category": "PRENDAS DE VESTIR",
+      "price": 12.9,
+      "stock": 2,
+      "source_row": 198
+    },
+    {
+      "name": "MEDIA DE NIÑO ALGODÓN",
+      "category": "PRENDAS DE VESTIR",
+      "price": 3.49,
+      "stock": 53,
+      "source_row": 199
+    },
+    {
+      "name": "MEDIA TOBILLERA ALGODÓN",
+      "category": "PRENDAS DE VESTIR",
+      "price": 3.99,
+      "stock": 2,
+      "source_row": 200
+    },
+    {
+      "name": "MEDIA TALONERA ALGODÓN",
+      "category": "PRENDAS DE VESTIR",
+      "price": 2.99,
+      "stock": 0,
+      "source_row": 201
+    },
+    {
+      "name": "MEDIAS PARA DORMIR 2 A 4",
+      "category": "PRENDAS DE VESTIR",
+      "price": 2.49,
+      "stock": 12,
+      "source_row": 202
+    },
+    {
+      "name": "MEDIAS PARA DORMIR 4 A 6",
+      "category": "PRENDAS DE VESTIR",
+      "price": 2.49,
+      "stock": 9,
+      "source_row": 203
+    },
+    {
+      "name": "MEDIAS PARA DORMIR 6 A 8",
+      "category": "PRENDAS DE VESTIR",
+      "price": 2.49,
+      "stock": 10,
+      "source_row": 204
+    },
+    {
+      "name": "MEDIAS PARA DORMIR ADULTO",
+      "category": "PRENDAS DE VESTIR",
+      "price": 3.99,
+      "stock": 15,
+      "source_row": 205
+    },
+    {
+      "name": "INTERIOR 505549",
+      "category": "PRENDAS DE VESTIR",
+      "price": 4.99,
+      "stock": 12,
+      "source_row": 206
+    },
+    {
+      "name": "INTERIOR WS1202",
+      "category": "PRENDAS DE VESTIR",
+      "price": 6.99,
+      "stock": 6,
+      "source_row": 207
+    },
+    {
+      "name": "INTERIOR 505233",
+      "category": "PRENDAS DE VESTIR",
+      "price": 4.99,
+      "stock": 14,
+      "source_row": 208
+    },
+    {
+      "name": "INTERIOR DH2110",
+      "category": "PRENDAS DE VESTIR",
+      "price": 7.99,
+      "stock": 0,
+      "source_row": 209
+    },
+    {
+      "name": "INTERIOR 8458",
+      "category": "PRENDAS DE VESTIR",
+      "price": 8.49,
+      "stock": 3,
+      "source_row": 210
+    },
+    {
+      "name": "INTERIOR R187",
+      "category": "PRENDAS DE VESTIR",
+      "price": 8.49,
+      "stock": 9,
+      "source_row": 211
+    },
+    {
+      "name": "INTERIOR DK670",
+      "category": "PRENDAS DE VESTIR",
+      "price": 6.99,
+      "stock": 3,
+      "source_row": 212
+    },
+    {
+      "name": "INTERIOR 6048",
+      "category": "PRENDAS DE VESTIR",
+      "price": 7.99,
+      "stock": 5,
+      "source_row": 213
+    },
+    {
+      "name": "INTERIOR HB904",
+      "category": "PRENDAS DE VESTIR",
+      "price": 7.99,
+      "stock": 0,
+      "source_row": 214
+    },
+    {
+      "name": "INTERIOR Q8300",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 215
+    },
+    {
+      "name": "INTERIOR D28101",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 216
+    },
+    {
+      "name": "INTERIOR HB3811",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 217
+    },
+    {
+      "name": "INTERIOR ST2402",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 218
+    },
+    {
+      "name": "INTERIOR Q8510",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 219
+    },
+    {
+      "name": "INTERIOR 8290",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 220
+    },
+    {
+      "name": "INTERIOR DH1965",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 221
+    },
+    {
+      "name": "INTERIOR X2968",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 222
+    },
+    {
+      "name": "INTERIOR DH1677",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 223
+    },
+    {
+      "name": "INTERIOR 6005",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 224
+    },
+    {
+      "name": "INTERIOR 240126",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 225
+    },
+    {
+      "name": "INTERIOR DH1192",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 226
+    },
+    {
+      "name": "INTERIOR CYB704",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 227
+    },
+    {
+      "name": "INTERIOR 66026",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 228
+    },
+    {
+      "name": "INTERIOR V2148",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 229
+    },
+    {
+      "name": "INTERIOR H6004",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 230
+    },
+    {
+      "name": "2095 BLUZA",
+      "category": "PRENDAS DE VESTIR",
+      "price": 19.9,
+      "stock": 0,
+      "source_row": 231
+    },
+    {
+      "name": "FAJA WF5895",
+      "category": "PRENDAS DE VESTIR",
+      "price": 13.9,
+      "stock": 5,
+      "source_row": 232
+    },
+    {
+      "name": "FAJA 0087",
+      "category": "PRENDAS DE VESTIR",
+      "price": 15.9,
+      "stock": 0,
+      "source_row": 233
+    },
+    {
+      "name": "BOXER 6723",
+      "category": "PRENDAS DE VESTIR",
+      "price": 9.9,
+      "stock": 2,
+      "source_row": 234
+    },
+    {
+      "name": "BOXER X5665",
+      "category": "PRENDAS DE VESTIR",
+      "price": 9.9,
+      "stock": 4,
+      "source_row": 235
+    },
+    {
+      "name": "BOXER ZL51250",
+      "category": "PRENDAS DE VESTIR",
+      "price": 7.49,
+      "stock": 2,
+      "source_row": 236
+    },
+    {
+      "name": "BOXER B017",
+      "category": "PRENDAS DE VESTIR",
+      "price": 9.9,
+      "stock": 0,
+      "source_row": 237
+    },
+    {
+      "name": "SOSTEN BX43536",
+      "category": "PRENDAS DE VESTIR",
+      "price": 14.9,
+      "stock": 13,
+      "source_row": 238
+    },
+    {
+      "name": "SOSTEN 1009",
+      "category": "PRENDAS DE VESTIR",
+      "price": 14.49,
+      "stock": 7,
+      "source_row": 239
+    },
+    {
+      "name": "SOSTEN 33071",
+      "category": "PRENDAS DE VESTIR",
+      "price": 10.9,
+      "stock": 2,
+      "source_row": 240
+    },
+    {
+      "name": "SOSTEN ZB664",
+      "category": "PRENDAS DE VESTIR",
+      "price": 11.9,
+      "stock": 0,
+      "source_row": 241
+    },
+    {
+      "name": "SOSTEN XFS33",
+      "category": "PRENDAS DE VESTIR",
+      "price": 14.9,
+      "stock": 4,
+      "source_row": 242
+    },
+    {
+      "name": "SOSTEN XFS27",
+      "category": "PRENDAS DE VESTIR",
+      "price": 12.9,
+      "stock": 0,
+      "source_row": 243
+    },
+    {
+      "name": "SOSTEN XFS38",
+      "category": "PRENDAS DE VESTIR",
+      "price": 12.9,
+      "stock": 0,
+      "source_row": 244
+    },
+    {
+      "name": "SOSTEN 92531",
+      "category": "PRENDAS DE VESTIR",
+      "price": 13.99,
+      "stock": 0,
+      "source_row": 245
+    },
+    {
+      "name": "SOSTEN XFS22",
+      "category": "PRENDAS DE VESTIR",
+      "price": 12.9,
+      "stock": 0,
+      "source_row": 246
+    },
+    {
+      "name": "SOSTEN XFS29",
+      "category": "PRENDAS DE VESTIR",
+      "price": 14.9,
+      "stock": 9,
+      "source_row": 247
+    },
+    {
+      "name": "SOSTEN WJ2301",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 248
+    },
+    {
+      "name": "SOSTEN XFS41",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 249
+    },
+    {
+      "name": "SOSTEN XFS18",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 250
+    },
+    {
+      "name": "SOSTEN 999",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 251
+    },
+    {
+      "name": "SOSTEN 8803",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 252
+    },
+    {
+      "name": "SOSTEN XFS48",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 253
+    },
+    {
+      "name": "SOSTEN XFS54",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 254
+    },
+    {
+      "name": "SOSTEN 2012",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 255
+    },
+    {
+      "name": "SOSTEN 988",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 256
+    },
+    {
+      "name": "TOP 8723",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 12,
+      "source_row": 257
+    },
+    {
+      "name": "TOP 001",
+      "category": "PRENDAS DE VESTIR",
+      "price": 12.9,
+      "stock": 0,
+      "source_row": 258
+    },
+    {
+      "name": "TOP 719",
+      "category": "PRENDAS DE VESTIR",
+      "price": 12.9,
+      "stock": 6,
+      "source_row": 259
+    },
+    {
+      "name": "CHULLOS VARIOS",
+      "category": "PRENDAS DE VESTIR",
+      "price": 3.99,
+      "stock": 62,
+      "source_row": 260
+    },
+    {
+      "name": "PIJAMA NIÑOS",
+      "category": "PRENDAS DE VESTIR",
+      "price": 24.9,
+      "stock": 79,
+      "source_row": 261
+    },
+    {
+      "name": "PIJAMA MUJER",
+      "category": "PRENDAS DE VESTIR",
+      "price": 31.9,
+      "stock": 58,
+      "source_row": 262
+    },
+    {
+      "name": "CASACA UNISEX CORTAVIENTO",
+      "category": "PRENDAS DE VESTIR",
+      "price": 29.9,
+      "stock": 54,
+      "source_row": 263
+    },
+    {
+      "name": "CASACA NIÑO 6666",
+      "category": "PRENDAS DE VESTIR",
+      "price": 69.9,
+      "stock": 4,
+      "source_row": 264
+    },
+    {
+      "name": "CASACA DAMA X012",
+      "category": "PRENDAS DE VESTIR",
+      "price": 59.9,
+      "stock": 0,
+      "source_row": 265
+    },
+    {
+      "name": "POLO CALEFACTOR",
+      "category": "PRENDAS DE VESTIR",
+      "price": 0,
+      "stock": 0,
+      "source_row": 266
+    },
+    {
+      "name": "AGENDA IMANTADA DE LICENCIA",
+      "category": "MENAJE",
+      "price": 14.9,
+      "stock": 0,
+      "source_row": 273
+    },
+    {
+      "name": "ALCANCIA STICH DE #1",
+      "category": "MENAJE",
+      "price": 3.99,
+      "stock": 2,
+      "source_row": 274
+    },
+    {
+      "name": "ALCANCIA STICH DE #2",
+      "category": "MENAJE",
+      "price": 4.99,
+      "stock": 3,
+      "source_row": 275
+    },
+    {
+      "name": "ALCANCIA STICH DE #3",
+      "category": "MENAJE",
+      "price": 5.99,
+      "stock": 6,
+      "source_row": 276
+    },
+    {
+      "name": "ALCANCIA STICH DE #4",
+      "category": "MENAJE",
+      "price": 6.99,
+      "stock": 6,
+      "source_row": 277
+    },
+    {
+      "name": "ALCANCIA STICH DE #5",
+      "category": "MENAJE",
+      "price": 7.99,
+      "stock": 6,
+      "source_row": 278
+    },
+    {
+      "name": "CONDIMENTERO DE LICENCIA",
+      "category": "MENAJE",
+      "price": 8.99,
+      "stock": 9,
+      "source_row": 279
+    },
+    {
+      "name": "CORTINA DUCHA DE LICENCIA",
+      "category": "MENAJE",
+      "price": 7.9,
+      "stock": 4,
+      "source_row": 280
+    },
+    {
+      "name": "ESFERA LED",
+      "category": "MENAJE",
+      "price": 6.99,
+      "stock": 0,
+      "source_row": 281
+    },
+    {
+      "name": "HELADERA KWAI",
+      "category": "MENAJE",
+      "price": 15.99,
+      "stock": 3,
+      "source_row": 282
+    },
+    {
+      "name": "INDIVIDUALES DE MESA DE LICENCIA",
+      "category": "MENAJE",
+      "price": 1.49,
+      "stock": 23,
+      "source_row": 283
+    },
+    {
+      "name": "JOYERO 3 NIVELES PVC",
+      "category": "MENAJE",
+      "price": 5.49,
+      "stock": 2,
+      "source_row": 284
+    },
+    {
+      "name": "JOYERO DE ACRILICO",
+      "category": "MENAJE",
+      "price": 7.99,
+      "stock": 7,
+      "source_row": 285
+    },
+    {
+      "name": "JOYERO DE GAMUZA",
+      "category": "MENAJE",
+      "price": 11.9,
+      "stock": 4,
+      "source_row": 286
+    },
+    {
+      "name": "MANTAS IMPORTADAS",
+      "category": "MENAJE",
+      "price": 34.9,
+      "stock": 9,
+      "source_row": 287
+    },
+    {
+      "name": "MANTAS LUMINOSAS DE LICENIA",
+      "category": "MENAJE",
+      "price": 14.9,
+      "stock": 0,
+      "source_row": 288
+    },
+    {
+      "name": "MESA PORTATIL CAMA DE LICENIA",
+      "category": "MENAJE",
+      "price": 17.9,
+      "stock": 10,
+      "source_row": 289
+    },
+    {
+      "name": "NECESER CIRCULAR DOMO",
+      "category": "MENAJE",
+      "price": 10.9,
+      "stock": 11,
+      "source_row": 290
+    },
+    {
+      "name": "RELOJ DE PARED DE LICENCIA",
+      "category": "MENAJE",
+      "price": 11.9,
+      "stock": 11,
+      "source_row": 291
+    },
+    {
+      "name": "SILLA PLEGABLE DE LICENCIA",
+      "category": "MENAJE",
+      "price": 14.9,
+      "stock": 6,
+      "source_row": 292
+    },
+    {
+      "name": "TACHO DE LICENCIA",
+      "category": "MENAJE",
+      "price": 12.9,
+      "stock": 5,
+      "source_row": 293
+    },
+    {
+      "name": "TAZA CALENTADORA",
+      "category": "MENAJE",
+      "price": 14.9,
+      "stock": 6,
+      "source_row": 294
+    },
+    {
+      "name": "TAZAS ANCHAS DE LICENCIA",
+      "category": "MENAJE",
+      "price": 7.99,
+      "stock": 4,
+      "source_row": 295
+    },
+    {
+      "name": "TOMATODO COHETE DE LICENCIA",
+      "category": "MENAJE",
+      "price": 8.99,
+      "stock": 1,
+      "source_row": 296
+    },
+    {
+      "name": "ESPEJO LED CORAZON",
+      "category": "MENAJE",
+      "price": 0,
+      "stock": 5,
+      "source_row": 297
+    },
+    {
+      "name": "BOLSO MARRON GRANDE",
+      "category": "ARTICULOS PERSONALES",
+      "price": 16.9,
+      "stock": 5,
+      "source_row": 304
+    },
+    {
+      "name": "CARTERA COLORES",
+      "category": "ARTICULOS PERSONALES",
+      "price": 15.9,
+      "stock": 9,
+      "source_row": 305
+    },
+    {
+      "name": "CARTERA FASHION BAG",
+      "category": "ARTICULOS PERSONALES",
+      "price": 24.9,
+      "stock": 0,
+      "source_row": 306
+    },
+    {
+      "name": "CARTERA MIN MIN",
+      "category": "ARTICULOS PERSONALES",
+      "price": 17.49,
+      "stock": 6,
+      "source_row": 307
+    },
+    {
+      "name": "MOCHILA LOVE",
+      "category": "ARTICULOS PERSONALES",
+      "price": 11.9,
+      "stock": 4,
+      "source_row": 308
+    },
+    {
+      "name": "BOLSA REGALO M",
+      "category": "OTROS",
+      "price": 16.9,
+      "stock": 0,
+      "source_row": 315
+    },
+    {
+      "name": "BOLSA REGALO MZ",
+      "category": "OTROS",
+      "price": 15.9,
+      "stock": 0,
+      "source_row": 316
+    },
+    {
+      "name": "BOLSA REGALO L",
+      "category": "OTROS",
+      "price": 24.9,
+      "stock": 0,
+      "source_row": 317
+    },
+    {
+      "name": "BOLSA REGALO XL",
+      "category": "OTROS",
+      "price": 17.49,
+      "stock": 0,
+      "source_row": 318
+    }
+  ],
+  "categories": [
+    "CUIDADO DE LA PIEL",
+    "COSMETICOS",
+    "HERRAMIENTAS DE ASEO PERSONAL",
+    "ASEO PERSONAL",
+    "ARREGLO ESTETICO",
+    "BISUTERIA",
+    "DULCES",
+    "PRENDAS DE VESTIR",
+    "MENAJE",
+    "ARTICULOS PERSONALES",
+    "OTROS"
+  ],
+  "duplicates_removed": 0
+}

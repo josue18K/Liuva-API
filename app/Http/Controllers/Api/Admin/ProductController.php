@@ -20,7 +20,7 @@ class ProductController extends Controller
             'q' => ['nullable', 'string', 'max:100'],
             'category_id' => ['nullable', 'integer', 'exists:categories,id'],
             'active' => ['nullable', 'boolean'],
-            'per_page' => ['nullable', 'integer', 'min:1', 'max:50'],
+            'per_page' => ['nullable', 'integer', 'min:1', 'max:500'],
         ]);
 
         $search = trim((string) ($validated['q'] ?? ''));
