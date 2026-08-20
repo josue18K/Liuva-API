@@ -77,6 +77,17 @@ class ProductController extends Controller
         ], 201);
     }
 
+    public function nextCode(Request $request): JsonResponse
+    {
+        $validated = $request->validate([
+            'sede_id' => ['required', 'integer', 'exists:sedes,id'],
+        ]);
+
+        return response()->json([
+            'codigo_interno' => $this->generateNextCode((int) $validated['sede_id']),
+        ]);
+    }
+
     public function show(Product $product): JsonResponse
     {
         $product->load(['category:id,nombre', 'stocks.sede:id,nombre']);
@@ -125,17 +136,17 @@ class ProductController extends Controller
         }
 
         $lastProduct = Product::query()
-            ->where('codigo_interno', 'like', $prefix . '%')
-            ->orderByRaw("CAST(SUBSTRING(codigo_interno, " . (strlen($prefix) + 1) . ") AS UNSIGNED) DESC")
+            ->where('codigo_interno', 'like', $prefix.'%')
+            ->orderByRaw('CAST(SUBSTRING(codigo_interno, '.(strlen($prefix) + 1).') AS UNSIGNED) DESC')
             ->first();
 
         if ($lastProduct) {
             $lastNumber = (int) substr($lastProduct->codigo_interno, strlen($prefix));
             $nextNumber = $lastNumber + 1;
         } else {
-            $nextNumber = 1;
+            $nextNumber = 0;
         }
 
-        return $prefix . str_pad((string) $nextNumber, 3, '0', STR_PAD_LEFT);
+        return $prefix.str_pad((string) $nextNumber, 3, '0', STR_PAD_LEFT);
     }
 }

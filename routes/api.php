@@ -14,6 +14,7 @@ use App\Http\Controllers\Api\Admin\SellerController;
 use App\Http\Controllers\Api\Admin\SettingController;
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CashRegisterController;
+use App\Http\Controllers\Api\PreferenceController;
 use App\Http\Controllers\Api\ProfileController;
 use App\Http\Controllers\Api\SaleController;
 use App\Http\Controllers\Api\SaleReceiptController;
@@ -26,6 +27,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::put('/profile', [ProfileController::class, 'update']);
+    Route::get('/preferences', [PreferenceController::class, 'show']);
+    Route::put('/preferences', [PreferenceController::class, 'update']);
     Route::post('/account/activate', [AccountController::class, 'activate']);
 
     Route::middleware('account.active')->group(function () {
@@ -63,6 +66,7 @@ Route::middleware('auth:sanctum')->group(function () {
 
             Route::get('/products', [ProductController::class, 'index']);
             Route::post('/products', [ProductController::class, 'store']);
+            Route::get('/products-next-code', [ProductController::class, 'nextCode']);
             Route::get('/products/{product}', [ProductController::class, 'show']);
             Route::put('/products/{product}', [ProductController::class, 'update']);
 

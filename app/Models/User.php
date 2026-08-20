@@ -31,6 +31,8 @@ class User extends Authenticatable
         'active',
         'sede_id',
         'estado',
+        'brand_color',
+        'background_color',
     ];
 
     protected $hidden = [

@@ -7,7 +7,6 @@ use App\Models\ActivityLog;
 use App\Models\User;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
 class AdminUserController extends Controller
@@ -75,7 +74,7 @@ class AdminUserController extends Controller
         $admin->name = $validated['name'];
         $admin->email = $validated['email'];
 
-        if (!empty($validated['password'])) {
+        if (! empty($validated['password'])) {
             $admin->password = $validated['password'];
         }
 

@@ -6,6 +6,21 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class StoreSedeRequest extends FormRequest
 {
+    protected function prepareForValidation(): void
+    {
+        if (! $this->filled('prefix_codigo') && $this->filled('nombre')) {
+            $name = mb_strtoupper((string) $this->input('nombre'));
+            $prefix = str_contains($name, 'PAUZA') ? 'PAU' : (str_contains($name, 'MUJER') ? 'MUJE' : '');
+
+            if ($prefix === '') {
+                $clean = preg_replace('/[^A-Z0-9]/', '', str_replace('LIUVA', '', $name));
+                $prefix = substr($clean, 0, 4);
+            }
+
+            $this->merge(['prefix_codigo' => $prefix]);
+        }
+    }
+
     public function authorize(): bool
     {
         return true;

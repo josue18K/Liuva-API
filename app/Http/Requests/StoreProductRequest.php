@@ -26,7 +26,7 @@ class StoreProductRequest extends FormRequest
         return [
             'nombre' => ['required', 'string', 'max:255'],
             'descripcion' => ['nullable', 'string', 'max:2000'],
-            'sede_id' => ['nullable', 'integer', 'exists:sedes,id'],
+            'sede_id' => [Rule::requiredIf(fn () => ! $this->filled('codigo_interno')), 'nullable', 'integer', 'exists:sedes,id'],
             'codigo_interno' => ['nullable', 'string', 'max:100', 'unique:products,codigo_interno'],
             'codigo_barras' => ['nullable', 'string', 'regex:/^[0-9]{6,32}$/', 'unique:products,codigo_barras'],
             'precio_oficial' => ['required', 'decimal:0,2', 'min:0'],
@@ -34,6 +34,13 @@ class StoreProductRequest extends FormRequest
             'stock_minimo' => ['required', 'integer', 'min:0', 'max:1000000'],
             'category_id' => ['required', 'integer', Rule::exists('categories', 'id')->where('active', true)],
             'active' => ['nullable', 'boolean'],
+        ];
+    }
+
+    public function messages(): array
+    {
+        return [
+            'sede_id.required' => 'Selecciona una sede para generar el código interno.',
         ];
     }
 }
