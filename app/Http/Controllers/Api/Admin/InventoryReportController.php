@@ -5,35 +5,17 @@ namespace App\Http\Controllers\Api\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\ProductStock;
 use App\Models\Sede;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class InventoryReportController extends Controller
 {
     public function bySede(Request $request, Sede $sede): JsonResponse
     {
-        $request->validate([
-            'solo_con_stock' => ['nullable', 'boolean'],
-            'category_id' => ['nullable', 'integer', 'exists:categories,id'],
-        ]);
-
-        $query = ProductStock::query()
-            ->with([
-                'product:id,nombre,codigo_interno,codigo_barras,category_id,stock_minimo,unidad,active',
-                'product.category:id,nombre',
-                'sede:id,nombre',
-            ])
-            ->where('sede_id', $sede->id)
-            ->when($request->filled('category_id'), function ($query) use ($request) {
-                $query->whereHas('product', fn ($query) => $query->where('category_id', $request->integer('category_id')));
-            })
-            ->orderByDesc('stock');
-
-        if ($request->boolean('solo_con_stock')) {
-            $query->where('stock', '>', 0);
-        }
-
-        $stocks = $query->get();
+        $stocks = $this->stocks($request, $sede);
 
         $lines = [];
         $lines[] = '📦 REPORTE DE INVENTARIO';
@@ -85,5 +67,52 @@ class InventoryReportController extends Controller
                 ];
             })->values(),
         ]);
+    }
+
+    public function pdf(Request $request, Sede $sede): Response
+    {
+        $stocks = $this->stocks($request, $sede);
+        $options = new Options;
+        $options->set('defaultFont', 'DejaVu Sans');
+        $options->set('isRemoteEnabled', false);
+
+        $dompdf = new Dompdf($options);
+        $dompdf->loadHtml(view('reports.inventory', [
+            'sede' => $sede,
+            'stocks' => $stocks,
+            'generatedAt' => now(),
+        ])->render());
+        $dompdf->setPaper('a4', 'portrait');
+        $dompdf->render();
+
+        $filename = 'inventario-'.str($sede->nombre)->slug().'-'.now()->format('Y-m-d').'.pdf';
+
+        return response($dompdf->output(), 200, [
+            'Content-Type' => 'application/pdf',
+            'Content-Disposition' => 'attachment; filename="'.$filename.'"',
+            'Cache-Control' => 'private, no-store',
+        ]);
+    }
+
+    private function stocks(Request $request, Sede $sede)
+    {
+        $request->validate([
+            'solo_con_stock' => ['nullable', 'boolean'],
+            'category_id' => ['nullable', 'integer', 'exists:categories,id'],
+        ]);
+
+        return ProductStock::query()
+            ->with([
+                'product:id,nombre,codigo_interno,codigo_barras,category_id,stock_minimo,unidad,active',
+                'product.category:id,nombre',
+                'sede:id,nombre',
+            ])
+            ->where('sede_id', $sede->id)
+            ->when($request->filled('category_id'), function ($query) use ($request) {
+                $query->whereHas('product', fn ($query) => $query->where('category_id', $request->integer('category_id')));
+            })
+            ->when($request->boolean('solo_con_stock'), fn ($query) => $query->where('stock', '>', 0))
+            ->orderBy('product_id')
+            ->get();
     }
 }

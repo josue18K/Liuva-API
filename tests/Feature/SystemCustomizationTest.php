@@ -63,6 +63,12 @@ class SystemCustomizationTest extends TestCase
             'category_id' => $category->id, 'active' => true,
         ])->assertCreated()->assertJsonPath('product.codigo_interno', 'PAU000');
 
+        $this->assertDatabaseHas('product_stocks', [
+            'product_id' => Product::query()->where('codigo_interno', 'PAU000')->value('id'),
+            'sede_id' => $pauza->id,
+            'stock' => 0,
+        ]);
+
         $this->withToken($token)->getJson("/api/admin/products-next-code?sede_id={$pauza->id}")
             ->assertOk()->assertJsonPath('codigo_interno', 'PAU001');
         $this->withToken($token)->getJson("/api/admin/products-next-code?sede_id={$mujer->id}")

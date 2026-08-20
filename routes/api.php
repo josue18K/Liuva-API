@@ -74,6 +74,7 @@ Route::middleware('auth:sanctum')->group(function () {
             Route::post('/inventory-movements', [InventoryMovementController::class, 'store']);
 
             Route::get('/inventory-reports/sede/{sede}', [InventoryReportController::class, 'bySede']);
+            Route::get('/inventory-reports/sede/{sede}/pdf', [InventoryReportController::class, 'pdf']);
 
             Route::get('/activity-logs', [ActivityLogController::class, 'index']);
             Route::get('/activity-logs/{activityLog}', [ActivityLogController::class, 'show']);

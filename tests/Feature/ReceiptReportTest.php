@@ -77,6 +77,20 @@ class ReceiptReportTest extends TestCase
             ->assertJsonPath('report_text', fn (string $text) => str_contains($text, '1 docena(s) + 2 unidad(es)'));
     }
 
+    public function test_admin_downloads_inventory_as_pdf(): void
+    {
+        [, $sede, $product] = $this->catalog();
+        ProductStock::query()->create(['product_id' => $product->id, 'sede_id' => $sede->id, 'stock' => 4]);
+        $admin = User::factory()->admin()->create();
+
+        $response = $this->withToken($admin->createToken('admin')->plainTextToken)
+            ->get("/api/admin/inventory-reports/sede/{$sede->id}/pdf")
+            ->assertOk()
+            ->assertHeader('content-type', 'application/pdf');
+
+        $this->assertSame('%PDF', substr($response->getContent(), 0, 4));
+    }
+
     private function catalog(): array
     {
         $sede = Sede::query()->create(['nombre' => 'Principal', 'active' => true]);

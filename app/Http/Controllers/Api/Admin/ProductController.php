@@ -7,6 +7,7 @@ use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\ActivityLog;
 use App\Models\Product;
+use App\Models\ProductStock;
 use App\Models\Sede;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -62,6 +63,13 @@ class ProductController extends Controller
             'category_id' => $request->integer('category_id'),
             'active' => $request->boolean('active', true),
         ]);
+
+        if ($request->filled('sede_id')) {
+            ProductStock::query()->firstOrCreate([
+                'product_id' => $product->id,
+                'sede_id' => $request->integer('sede_id'),
+            ], ['stock' => 0]);
+        }
 
         ActivityLog::query()->create([
             'user_id' => $request->user()->id,
